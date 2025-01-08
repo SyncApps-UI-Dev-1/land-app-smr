@@ -1,5 +1,12 @@
 import { useState } from "react";
-import smr from "./images/AvatarFive.svg";
+import Avatar from "../Components/images/AvatarFive.svg";
+import { Link } from "react-router-dom";
+import {
+  BrowserRouter as router,
+  Routes,
+  Route,
+  Links,
+} from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +19,9 @@ function Navbar() {
     <nav className="flex items-center justify-between bg-white z-50 relative px-4 md:px-16 w-full mt-4 md:shadow-lg text-black">
       {/* Left Section - Logo and Menu */}
       <div className="flex items-center gap-6">
-        <div className="font-bold">Land App</div>
+        <Link to="/">
+          <div className="font-bold cursor-pointer">Land App</div>
+        </Link>
         {/* Menu */}
         <div
           className={`absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent md:flex gap-6 py-6 ${
@@ -20,12 +29,12 @@ function Navbar() {
           }`}
         >
           <ul className="flex flex-col font-semibold justify-center items-center md:flex-row md:items-center gap-5 cursor-pointer">
-            <li>Home</li>
-            <li>Bookings</li>
-            <li>Projects</li>
-            <li>Tasks</li>
-            <li>Reporting</li>
-            <li>Users</li>
+            {/* <Link to="/">Home</Link> */}
+            <Link to="/AllLands">All Lands</Link>
+            <li>Developers</li>
+            <li>Lakes</li>
+            <li>Premium</li>
+            <li>Services</li>
           </ul>
         </div>
       </div>
@@ -33,7 +42,7 @@ function Navbar() {
       {/* Right Section - Notifications and Avatar (Hidden in Mobile View) */}
       <div className="flex items-center gap-2">
         <img
-          src={smr}
+          src={Avatar}
           alt="avatar"
           className="rounded-full w-8 h-8 ml-2 border border-gray-300"
         />
