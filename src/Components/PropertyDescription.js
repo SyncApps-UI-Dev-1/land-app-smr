@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar";
 import Lands from "./lands";
 import PathInfo from "./PathInfo";
 import VentureDetails from "./ventureDetails";
@@ -9,8 +8,9 @@ import MoreDetails from "./MoreDetails";
 import PremiumProperties from "./PremiumProperties";
 import Testimonial from "./Testimonial";
 import Footer from "../Common/Footer";
+import Navbar from "../Common/Navbar";
 
-const MainContent = () => {
+const PropertyDescription = () => {
   return (
     <div className="">
       <Navbar />
@@ -22,11 +22,9 @@ const MainContent = () => {
       <MoreDetails />
       <PremiumProperties />
       <Testimonial />
-      <div className="border-b border-gray-300 mt-4"></div>
-      <div className="border-b border-gray-300 mt-8"></div>
       <Footer />
     </div>
   );
 };
 
-export default MainContent;
+export default PropertyDescription;

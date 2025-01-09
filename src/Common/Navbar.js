@@ -41,11 +41,13 @@ function Navbar() {
 
       {/* Right Section - Notifications and Avatar (Hidden in Mobile View) */}
       <div className="flex items-center gap-2">
-        <img
-          src={Avatar}
-          alt="avatar"
-          className="rounded-full w-8 h-8 ml-2 border border-gray-300"
-        />
+        <Link to="/Profile">
+          <img
+            src={Avatar}
+            alt="avatar"
+            className="rounded-full w-8 h-8 ml-2 border border-gray-300 cursor-pointer"
+          />
+        </Link>
         {/* Hamburger Menu - Visible on Small Screens */}
         <button
           className="md:hidden text-gray-700 focus:outline-none ml-6"

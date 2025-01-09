@@ -1,5 +1,6 @@
 import Footer from "../../Common/Footer";
-import Navbar from "../../Components/Navbar";
+import Navbar from "../../Common/Navbar";
+// import Navbar from "../../Components/Navbar";
 import Agents from "./Agents";
 import Filter from "./Filter";
 // import Footer from "./Footer";
@@ -7,7 +8,7 @@ import LandsDetails from "./LandsDetails";
 import PathInfo from "./PathInfo";
 import SearchBar from "./SearchBar";
 
-function MainListing() {
+function PropertyListing() {
   return (
     <div>
       <Navbar />
@@ -16,10 +17,9 @@ function MainListing() {
       <SearchBar />
       <Agents />
       <LandsDetails />
-      {/* <Footer /> */}
       <Footer />
     </div>
   );
 }
 
-export default MainListing;
+export default PropertyListing;

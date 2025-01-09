@@ -8,25 +8,25 @@ function MoreDetails() {
       <div className="flex space-x-6 mt-4">
         <a
           href="#basic-details"
-          className="text-gray-500 font-semibold hover:underline"
+          className="text-gray-500 text-[9px] md:text-lg font-extrabold md:font-semibold hover:underline"
         >
           Basic Details
         </a>
         <a
           href="#documents"
-          className="text-gray-500 font-semibold hover:underline"
+          className="text-gray-500 text-[9px] md:text-lg font-extrabold md:font-semibold hover:underline"
         >
           Documents
         </a>
         <a
           href="#pricing"
-          className="text-gray-500 font-semibold hover:underline"
+          className="text-gray-500 text-[9px] md:text-lg font-extrabold md:font-semibold hover:underline"
         >
           Pricing & Other
         </a>
         <a
           href="#owner-details"
-          className="text-gray-500 font-semibold hover:underline"
+          className="text-gray-500 text-[9px] md:text-lg font-extrabold md:font-semibold hover:underline"
         >
           Owner Details
         </a>

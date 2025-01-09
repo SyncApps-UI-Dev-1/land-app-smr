@@ -14,7 +14,7 @@ const VentureDetails = () => {
       <div className="text-left relative -mt-6 w-full sm:w-3/4">
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-60 items-center sm:items-start w-full sm:w-[740px]">
           <div className="flex gap-4">
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            <h2 className="md:text-2xl font-bold text-gray-800 mb-2">
               Janapriya Ventures
             </h2>
             <img src={Verified} alt={Verified} className="w-8" />
@@ -25,7 +25,7 @@ const VentureDetails = () => {
               className="md:hidden block"
             />
           </div>
-          <div className="flex md:flex-row  ml-auto gap-3 md:block hidden">
+          <div className="flex md:block hidden md:flex-row ml-auto gap-3 md:flex">
             <img src={Like} alt={Like} className="w-8" />
             <img src={shareLocation} alt={shareLocation} />
           </div>

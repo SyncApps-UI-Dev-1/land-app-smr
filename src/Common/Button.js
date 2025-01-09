@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = ({ onClick, children, type = "button", className = "" }) => {
+const Button = ({ onClick, bg, children, type = "button", className = "" }) => {
   return (
     <button
       type={type}
-      className={`px-{} py-2 bg-{} text-{} rounded ${className}`}
+      className={`px-{} py-2 ${bg} text-{} rounded ${className}`}
       onClick={onClick}
     >
       {children}
@@ -18,6 +18,7 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(["button", "submit", "reset"]),
   className: PropTypes.string,
+  bg: PropTypes.string,
 };
 
 export default Button;

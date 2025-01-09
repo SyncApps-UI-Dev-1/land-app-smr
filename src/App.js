@@ -1,16 +1,17 @@
 // import AllLands from "./Components/AllLands";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MainContent from "./Components/MainContent";
-import MainListing from "./AllLands/Components/MainListing";
+import PropertyDescription from "./Components/PropertyDescription";
+import PropertyListing from "./AllLands/Components/PropertyListing";
+import Profile from "./Profile/Components/Profile";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainContent />} />
-        <Route path="/AllLands" element={<MainListing />}></Route>
-        {/* <MainContent /> */}
+        <Route path="/" element={<PropertyDescription />} />
+        <Route path="/AllLands" element={<PropertyListing />} />
+        <Route path="/Profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );

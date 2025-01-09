@@ -3,50 +3,54 @@ import { testimonials } from "../data/data";
 
 function Testimonial() {
   return (
-    <div className="px-5 md:px-20">
-      <div className="text-center mt-12">
-        <div className="font-bold text-lg">Our reviews</div>
-        <div className="text-gray-500">
-          Hear first-hand from our incredible community of customers.
+    <>
+      <div className="px-5 md:px-20">
+        <div className="text-center mt-12">
+          <div className="font-bold text-lg">Our reviews</div>
+          <div className="text-gray-500">
+            Hear first-hand from our incredible community of customers.
+          </div>
         </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-        {testimonials.map((testimonial) => (
-          <Box key={testimonial.id}>
-            <div className="flex flex-col items-start border border-gray-300 p-4 rounded-lg">
-              <img
-                src={testimonial.companyLogo}
-                alt="Company Logo"
-                className="mb-4 w-1/2 object-cover rounded-md"
-              />
-              <div className="max-w-[320px] text-sm text-gray-700">
-                {testimonial.content}
-              </div>
-              <div className="mt-8 flex gap-3 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+          {testimonials.map((testimonial) => (
+            <Box key={testimonial.id}>
+              <div className="flex flex-col items-start border border-gray-300 p-4 rounded-lg">
                 <img
-                  src={testimonial.avatarImg}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full"
+                  src={testimonial.companyLogo}
+                  alt="Company Logo"
+                  className="mb-4 w-1/2 object-cover rounded-md"
                 />
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-1">
-                    <div className="font-semibold">{testimonial.name}</div>
-                    <img
-                      src={testimonial.verified}
-                      alt="Verified"
-                      className="w-6 h-6"
-                    />
-                  </div>
-                  <div className="text-gray-500 text-sm">
-                    {testimonial.title}
+                <div className="max-w-[320px] text-sm text-gray-700">
+                  {testimonial.content}
+                </div>
+                <div className="mt-8 flex gap-3 items-center">
+                  <img
+                    src={testimonial.avatarImg}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full"
+                  />
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-1">
+                      <div className="font-semibold">{testimonial.name}</div>
+                      <img
+                        src={testimonial.verified}
+                        alt="Verified"
+                        className="w-6 h-6"
+                      />
+                    </div>
+                    <div className="text-gray-500 text-sm">
+                      {testimonial.title}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Box>
-        ))}
+            </Box>
+          ))}
+        </div>
       </div>
-    </div>
+      <div className="border-b border-gray-300 mt-4"></div>
+      <div className="border-b border-gray-300 mt-8"></div>
+    </>
   );
 }
 
