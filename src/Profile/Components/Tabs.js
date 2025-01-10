@@ -4,6 +4,7 @@ import PostedProperties from "./TabsComponents/PostedProperties";
 import History from "./TabsComponents/History";
 import Reviews from "./TabsComponents/Reviews";
 import Locations from "./TabsComponents/Locations";
+import Pagination from "./Pagination";
 
 function Tabs() {
   const [activeTab, setActiveTab] = useState("profileDetails");
@@ -61,6 +62,11 @@ function Tabs() {
         {activeTab === "history" && <History />}
         {activeTab === "reviews" && <Reviews />}
         {activeTab === "locations" && <Locations />}
+      </div>
+
+      {/* Pagination */}
+      <div className="flex justify-center">
+        <Pagination currentTab={activeTab} setActiveTab={setActiveTab} />
       </div>
     </div>
   );

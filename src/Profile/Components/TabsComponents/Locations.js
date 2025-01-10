@@ -1,24 +1,19 @@
 function Locations() {
   return (
-    <div>
-      <h1>Locations</h1>
-      yes and those handsome Moors all in white and turbans like kings asking
-      you to sit down in their little bit of a shop and Ronda with the old
-      windows of the posadas 2 glancing eyes a lattice hid for her lover to kiss
-      the iron and the wineshops half open at night and the castanets and the
-      night we missed the boat at Algeciras the watchman going about serene with
-      his lamp and O that awful deepdown torrent O and the sea the sea crimson
-      sometimes like fire and the glorious sunsets and the figtrees in the
-      Alameda gardens yes and all the queer little streets and the pink and blue
-      and yellow houses and the rosegardens and the jessamine and geraniums and
-      cactuses and Gibraltar as a girl where I was a Flower of the mountain yes
-      when I put the rose in my hair like the Andalusian girls used or shall I
-      wear a red yes and how he kissed me under the Moorish wall and I thought
-      well as well him as another and then I asked him with my eyes to ask again
-      yes and then he asked me would I yes to say yes my mountain flower and
-      first I put my arms around him yes and drew him down to me so he could
-      feel my breasts all perfume yes and his heart was going like mad and yes I
-      said yes I will Yes.
+    <div className="max-w-4xl mx-auto">
+      <h1>Prime Location for Your Dream Property</h1>
+      Our real estate properties are located in some of the most sought-after
+      areas, offering a perfect blend of convenience, beauty, and accessibility.
+      Whether you're looking for a cozy home in a peaceful neighborhood or a
+      modern apartment in the heart of the city, we have something to suit every
+      lifestyle. Enjoy proximity to top-rated schools, shopping centers, parks,
+      and public transport, ensuring you're always connected to the essentials.
+      Each location is carefully selected to provide a serene environment
+      without compromising on connectivity to business hubs and entertainment
+      venues. Whether you're a first-time homebuyer or an investor, our
+      properties are positioned for long-term growth and value. Experience
+      comfort, security, and convenience with every step you take in our prime
+      locations.
     </div>
   );
 }

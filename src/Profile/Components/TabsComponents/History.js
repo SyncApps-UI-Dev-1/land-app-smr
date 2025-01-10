@@ -1,19 +1,25 @@
 function History() {
   return (
-    <div>
-      <h1>History</h1>
-      In the first place we have granted to God, and by this our present charter
-      confirmed for us and our heirs forever that the English Church shall be
-      free, and shall have her rights entire, and her liberties inviolate; and
-      we will that it be thus observed; which is apparent from this that the
-      freedom of elections, which is reckoned most important and very essential
-      to the English Church, we, of our pure and unconstrained will, did grant,
-      and did by our charter confirm and did obtain the ratification of the same
-      from our lord, Pope Innocent III, before the quarrel arose between us and
-      our barons: and this we will observe, and our will is that it be observed
-      in good faith by our heirs forever. We have also granted to all freemen of
-      our kingdom, for us and our heirs forever, all the underwritten liberties,
-      to be had and held by them and their heirs, of us and our heirs forever.
+    <div className="max-w-4xl mx-auto">
+      <h1>History of Real Estate</h1>
+      History of Real Estate Real estate has a long history, evolving from basic
+      shelter needs in ancient civilizations to the complex global market we see
+      today. Early property ownership was limited to rulers, religious
+      institutions, and the wealthy, with land being passed down through
+      families or tribes. During the Industrial Revolution, rapid urbanization
+      led to the creation of commercial and residential properties to
+      accommodate workers moving to cities. The 20th century brought new
+      innovations, such as mortgage financing and suburban developments, making
+      homeownership accessible to a broader population. Post-World War II, the
+      demand for housing soared, shaping the modern real estate market. Today,
+      technology plays a significant role, with online platforms revolutionizing
+      how properties are bought and sold. Real estate investments have become a
+      key part of global economies, driven by both residential and commercial
+      growth. As sustainability and smart technology become more integrated, the
+      industry continues to adapt to the changing needs of society. From ancient
+      lands to modern cities, real estate has always mirrored societal progress.
+      The sector remains a vital part of global economies, representing both a
+      means of livelihood and wealth creation.
     </div>
   );
 }

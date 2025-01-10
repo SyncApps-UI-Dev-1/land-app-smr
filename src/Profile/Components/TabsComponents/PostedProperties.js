@@ -32,46 +32,43 @@ const PostedProperties = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 md:p-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:px-20 gap-4 mt-6 md:p-0">
         {displayedData.map((item) => (
           <div
             key={item.id}
-            className="relative border border-gray-300 rounded-lg p-3 shadow-lg w-full"
+            className="relative border border-gray-300 rounded-lg shadow-lg"
           >
             <img
               src={item.verified}
-              alt="Verified absolute mt-6"
-              className="w-6 h-6 ml-auto"
+              alt="Verified"
+              className="w-6 h-6 ml-auto absolute top-5 right-4"
             />
             {/* Logo */}
             <img
               src={item.logo}
               alt={`${item.title} logo`}
-              className="w-full md:w-[300px] h-auto mb-4 object-contain mx-auto"
+              className="w-full object-contain"
             />
-            <span className="absolute top-6 text-gray-300 left-6 text-xs bg-black rounded-full px-3 py-1">
-              Featured
-            </span>
 
             {/* Title and Verified Icon */}
-            <div className="flex items-center mb-2">
-              <h3 className="font-semibold text-md">{item.title}</h3>
+            <div className="flex items-center mt-2 ml-4">
+              <h3 className="text-md font-bold">{item.title}</h3>
             </div>
 
             {/* Location */}
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center gap-2 mt-1 mb-2 ml-4">
               <img src={item.locationIcon} alt="Location" className="w-4 h-4" />
               <span className="font-medium text-xs">{item.location}</span>
             </div>
             <div className="border-b border-gray-200 mt-2"></div>
 
             {/* Price, Size, and Rating */}
-            <div className="flex justify-between items-center mt-2 text-sm">
-              <p>Price: {item.price}</p>
-              <span className="text-gray-200">|</span>
-              <p>Size: {item.size}</p>
-              <span className="text-gray-200">|</span>
-              <p>Rating: {item.rating}</p>
+            <div className="flex items-center text-sm justify-center gap-3 font-bold p-2">
+              <p>{item.price}</p>
+              <span className="text-black">|</span>
+              <p>{item.size}</p>
+              <span className="text-black">|</span>
+              <p>{item.rating}</p>
             </div>
           </div>
         ))}

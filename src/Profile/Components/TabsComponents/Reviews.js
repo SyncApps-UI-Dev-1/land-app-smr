@@ -1,20 +1,21 @@
 function Reviews() {
   return (
-    <div>
-      <h1>Reviews</h1>
-      Fog everywhere. Fog up the river, where it flows among green aits and
-      meadows; fog down the river, where it rolls deified among the tiers of
-      shipping and the waterside pollutions of a great (and dirty) city. Fog on
-      the Essex marshes, fog on the Kentish heights. Fog creeping into the
-      cabooses of collier-brigs; fog lying out on the yards and hovering in the
-      rigging of great ships; fog drooping on the gunwales of barges and small
-      boats. Fog in the eyes and throats of ancient Greenwich pensioners,
-      wheezing by the firesides of their wards; fog in the stem and bowl of the
-      afternoon pipe of the wrathful skipper, down in his close cabin; fog
-      cruelly pinching the toes and fingers of his shivering little apprentice
-      boy on deck. Chance people on the bridges peeping over the parapets into a
-      nether sky of fog, with fog all round them, as if they were up in a
-      balloon and hanging in the misty clouds.
+    <div className="max-w-4xl mx-auto px-4 py-6 md:px-8">
+      <h1>Real Estate Project Reviews</h1>
+      Our real estate project has garnered positive feedback from clients and
+      industry experts alike. With its modern design, strategic location, and
+      top-notch amenities, it has become a sought-after choice for both
+      investors and homeowners. Many customers have praised the spacious
+      layouts, high-quality finishes, and commitment to sustainability. The
+      attention to detail and focus on creating a comfortable living experience
+      have been highlighted in numerous reviews. The project's accessibility to
+      major transportation hubs and local facilities has also been a major plus
+      for residents. Overall, the real estate development promises a high return
+      on investment and long-term value for its buyers. Clients appreciate the
+      transparent communication and personalized services offered throughout the
+      purchasing process. Whether you're looking for a home or an investment
+      opportunity, this project delivers on all fronts. The reviews speak for
+      themselves, with many happy clients recommending it to others.
     </div>
   );
 }

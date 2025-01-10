@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+// import React, { Children } from "react";
 import PropTypes from "prop-types";
 import Button from "./Button"; // Adjust the import path as needed
 
@@ -11,14 +11,14 @@ const Box = ({
   onButtonClick,
   className,
   bg,
-  children,
+  // children,
   border,
 }) => {
   return (
     <div
       className={`${border} p-4 flex flex-col ${bg} justify-center items-center gap-1 rounded-md`}
     >
-      {children}
+      {/* {children} */}
       {img && <img src={img} alt={title} className="" />}
       {title && <h2 className="font-bold">{title}</h2>}
       {content && <p className="font-bold">{content}</p>}

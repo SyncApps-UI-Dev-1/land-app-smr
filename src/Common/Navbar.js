@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Avatar from "../Components/images/AvatarFive.svg";
 import { Link } from "react-router-dom";
-import {
-  BrowserRouter as router,
-  Routes,
-  Route,
-  Links,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as router,
+//   Routes,
+//   Route,
+//   Links,
+// } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
