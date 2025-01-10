@@ -3,7 +3,7 @@ const latestProperties = [
     id: 1,
     logo: "/images/LatestOne.svg",
     title: "Green Meadows",
-    verified: "/images/verified-added.png",
+    verified: "/images/verified-added.svg",
     locationIcon: "location.png",
     location: "Shadnagar",
     price: "$25,000",

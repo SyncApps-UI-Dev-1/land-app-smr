@@ -8,6 +8,7 @@ import SearchbarImg from "../images/Searchbar.svg";
 import SearchbarLastImg from "../images/searchbarlastImg.svg";
 import ProfileSidebar from "../images/profileSidebar.svg";
 import BtnUtility from "../images/BtnUtility.svg";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -36,10 +37,12 @@ function Sidebar() {
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } fixed top-0 left-0 h-full w-3/4 bg-white text-black px-7 md:pr-0 pr-10 py-4 flex flex-col gap-4  transition-transform duration-300 md:static md:translate-x-0 md:w-4/5`}
       >
-        <div className="flex items-center gap-1 md:ml-0 ml-6">
-          <h1 className="text-xl font-bold md:mt-4 mt-2">Land</h1>
-          <h1 className="text-xl font-bold md:mt-4 mt-2">App</h1>
-        </div>
+        <Link to="/">
+          <div className="flex items-center gap-1 md:ml-0 ml-6 cursor-pointer">
+            <h1 className="text-xl font-bold md:mt-4 mt-2">Land</h1>
+            <h1 className="text-xl font-bold md:mt-4 mt-2">App</h1>
+          </div>
+        </Link>
         <div className="flex justify-center items-center relative">
           <input
             type="text"

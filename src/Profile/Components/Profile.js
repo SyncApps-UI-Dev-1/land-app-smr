@@ -9,7 +9,7 @@ const Profile = () => {
   return (
     <div className="flex h-screen px-0">
       <Sidebar />
-      <div className="w-full -z-40 relative bg-cover bg-center border border-gray-200">
+      <div className="w-full -z-40 relative bg-cover bg-center border-b-0 border border-gray-200">
         <ProfileNameImg />
         <ContactInfo />
         <Experience />

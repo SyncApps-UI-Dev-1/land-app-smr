@@ -27,7 +27,7 @@ function ProfileDetails() {
         </div>
 
         {/* RightSide */}
-        <div className="border border-gray-300 rounded-md p-4 flex flex-col gap-4 w-full lg:w-auto">
+        <div className="border border-gray-300 rounded-md p-4 flex md:flex-row flex-col gap-4 w-full lg:w-auto">
           <div className="flex flex-col gap-4">
             <div>
               <div className="text-gray-500 text-sm">Location</div>

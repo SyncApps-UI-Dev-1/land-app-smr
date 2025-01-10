@@ -38,6 +38,11 @@ const PostedProperties = () => {
             key={item.id}
             className="relative border border-gray-300 rounded-lg p-3 shadow-lg w-full"
           >
+            <img
+              src={item.verified}
+              alt="Verified absolute mt-6"
+              className="w-6 h-6 ml-auto"
+            />
             {/* Logo */}
             <img
               src={item.logo}
@@ -51,11 +56,6 @@ const PostedProperties = () => {
             {/* Title and Verified Icon */}
             <div className="flex items-center mb-2">
               <h3 className="font-semibold text-md">{item.title}</h3>
-              <img
-                src={item.verified}
-                alt="Verified"
-                className="w-6 h-6 ml-auto"
-              />
             </div>
 
             {/* Location */}

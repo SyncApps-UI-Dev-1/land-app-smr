@@ -7,11 +7,12 @@ function Button({
   textSize,
   bg,
   text,
+  cursorPointer,
 }) {
   return (
     <div>
       <button
-        className={`flex items-center border ${flex} ${bg} text-${textSize} border-gray-400 py-${paddingY} px-${paddingX} rounded-md text-black gap-1 ${bg} ${text}`}
+        className={`flex items-center border ${cursorPointer} ${flex} ${bg} text-${textSize} border-gray-400 py-${paddingY} px-${paddingX} rounded-md text-black gap-1 ${bg} ${text}`}
         style={{
           width: `${width}%`,
           display: "flex", // Flexbox display applied inline

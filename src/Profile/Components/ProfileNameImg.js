@@ -51,6 +51,7 @@ function ProfileNameImg() {
             text="text-gray-200"
             paddingX="2"
             paddingY="1"
+            cursorPointer="cursor-pointer" // Pass the correct Tailwind class for cursor-pointer
           >
             Follow
           </Button>
