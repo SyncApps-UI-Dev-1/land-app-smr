@@ -27,7 +27,7 @@ function Pagination({ currentTab, setActiveTab }) {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center mt-12 md:gap-96 gap-4">
+    <div className="flex flex-col md:flex-row justify-between items-center mt-12 md:gap-80 gap-4">
       {/* Previous Button */}
       <button
         onClick={handlePrevTab}
