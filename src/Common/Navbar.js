@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Avatar from "../Components/images/AvatarFive.svg";
+import Avatar from "../Property_Description/Components/images/AvatarFive.svg";
 import { Link } from "react-router-dom";
 // import {
 //   BrowserRouter as router,
