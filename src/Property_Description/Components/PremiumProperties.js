@@ -3,8 +3,8 @@ import { properties } from "../../data/data";
 
 function PremiumProperties() {
   return (
-    <div className="px-20 mt-6">
-      <h2 className="md:text-xl text-[14px] font-bold mb-4">
+    <div className="md:px-20 mt-6">
+      <h2 className="md:text-xl md:text-start text-center text-[14px] font-bold mb-4">
         Related Premium Properties
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4">
@@ -37,19 +37,19 @@ function PremiumProperties() {
                 </div>
 
                 {/* Property Details */}
-                <div className="flex items-center mt-6 text-gray-400 text-sm">
+                <div className="flex items-center md:justify-start justify-center mt-6 text-gray-400 text-sm">
                   <p className="">{property.location}</p>
                   <span className="ml-1">.</span>
                   <p>{property.date}</p>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 text-sm sm:text-lg">
+                <div className="flex flex-col md:text-start text-center sm:flex-row sm:items-center gap-1 text-sm sm:text-lg">
                   <p>{property.price}</p>
                   <span className="hidden sm:inline">-</span>{" "}
                   {/* Show only on medium screens or larger */}
                   <p>{property.size}</p>
                 </div>
 
-                <p className="text-sm font-medium text-gray-700">
+                <p className="text-sm md:text-start text-center font-medium text-gray-700">
                   {property.area}
                 </p>
               </div>

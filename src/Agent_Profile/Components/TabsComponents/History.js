@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ActivitySummary from "../../../Dashboard/User_Dashboard/ActivitySummary";
+import ActivitySummaryTabs from "./ActivitySummaryTabs";
 
 // Example data for other tabs
 const ViewProperties = [
@@ -21,10 +21,12 @@ const communicationHistory = [
 // Replacing SearchHistory array with JSX
 const SearchHistory = (
   <div className="-ml-24 p-4 w-[1000px]">
-    <ActivitySummary
+    <ActivitySummaryTabs />
+    {/* <ActivitySummary
       buttons={["All history", "Contacted"]}
       className="mt-1 text-gray-400"
       showReport={false}
+      showPaginationReusable={false}
       circleColor="bg-green-500"
       isActive={true}
       title="Search History"
@@ -81,7 +83,7 @@ const SearchHistory = (
           nextAction: "Revisit Appointment",
         },
       ]}
-    />
+    /> */}
   </div>
 );
 

@@ -28,10 +28,7 @@ function Agents() {
               bg="bg-black"
               textSize="sm"
               text="text-gray-300"
-              paddingX="4"
-              px="px-4"
-              py="py-2"
-              className="w-full"
+              className="w-full rounded-md py-2"
             >
               Contact Partner
             </Button>
@@ -53,9 +50,7 @@ function Agents() {
               bg="bg-black"
               textSize="sm"
               text="text-gray-300"
-              px="px-4"
-              py="py-2"
-              className="w-full"
+              className="w-full rounded-md py-2"
             >
               Contact Partner
             </Button>
@@ -77,9 +72,7 @@ function Agents() {
               bg="bg-black"
               textSize="sm"
               text="text-gray-300"
-              px="px-4"
-              py="py-2"
-              className="w-full"
+              className="w-full rounded-md py-2"
             >
               Contact Partner
             </Button>

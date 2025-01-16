@@ -14,10 +14,20 @@ function SearchBar() {
 
         {/* Medium and above screens: Show Clear and Search buttons in one line */}
         <div className="hidden md:flex gap-2">
-          <Button border="border border-gray-300" px="px-4" py="py-2">
+          <Button
+            border="border border-gray-300 rounded-lg"
+            px="px-4"
+            py="py-2"
+          >
             Clear
           </Button>
-          <Button bg="bg-black" text="text-white" px="px-4" py="py-2">
+          <Button
+            className="rounded-lg"
+            bg="bg-black"
+            text="text-white"
+            px="px-4"
+            py="py-2"
+          >
             Search
           </Button>
         </div>
@@ -27,21 +37,19 @@ function SearchBar() {
       <div className="md:hidden flex flex-col items-center mt-4 gap-4 w-full">
         {/* Clear and Search Buttons */}
         <div className="flex flex-col items-center gap-2 w-full">
-          <Button className="w-full max-w-xs" paddingX="px-4" paddingY="py-2">
+          <Button className="w-full max-w-xs rounded-lg border border-gray-300 py-1 font-semibold">
             Clear
           </Button>
           <Button
-            className="w-full max-w-xs"
+            className="w-full max-w-xs rounded-lg py-1"
             bg="bg-black"
             text="text-white"
-            paddingX="px-4"
-            paddingY="py-2"
           >
             Search
           </Button>
         </div>
         {/* More Filters Button */}
-        <Button className="w-full max-w-sm" paddingX="4" paddingY="2">
+        <Button className="w-full max-w-sm border border-gray-300 rounded-lg py-1">
           <span className="flex gap-2 items-center justify-center w-full">
             <img src={filterIcon} alt="Filter Icon" className="w-4 h-4" />
             More Filters

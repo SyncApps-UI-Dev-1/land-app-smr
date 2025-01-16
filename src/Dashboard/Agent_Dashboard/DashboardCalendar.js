@@ -18,11 +18,11 @@ const DashboardCalendar = () => {
   };
 
   return (
-    <div className="relative w-20 z-30">
+    <div className="relative w-full z-50">
       {/* Calendar Icon visible initially */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center py-2 px-3 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        className="flex items-center justify-center mt-1 py-2 px-4 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

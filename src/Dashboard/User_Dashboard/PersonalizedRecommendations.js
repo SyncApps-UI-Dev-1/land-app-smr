@@ -2,15 +2,20 @@ import RecommendImgOne from "../../Agent_Profile/images/RecommendImgOne.svg";
 
 function PersonalizedRecommendations() {
   return (
-    <div className="px-4 sm:px-10 mt-6">
-      <div className="border border-gray-300 p-4 rounded-md">
+    <div className="mt-6">
+      {/* Main Container with Reduced Width */}
+      <div className="border border-gray-300 p-4 rounded-md max-w-[950px] mx-auto">
         <div className="font-semibold text-lg mb-2 -mt-2">
           Personalized Recommendations
         </div>
         {/* Boxes */}
-        <div className="flex flex-wrap gap-6">
+        <div className="flex gap-4 flex-col md:flex-row">
+          {" "}
+          {/* Updated flex settings */}
           {/* Box : 1 */}
-          <div className="flex p-4 border border-gray-300 rounded-md w-full sm:w-[calc(50%-12px)]">
+          <div className="flex p-4 border border-gray-300 rounded-md w-full md:w-1/2">
+            {" "}
+            {/* Ensure full width on mobile */}
             <div className="flex gap-4">
               <img
                 src={RecommendImgOne}
@@ -19,14 +24,12 @@ function PersonalizedRecommendations() {
               />
               <div className="flex flex-col justify-around">
                 <div className="flex flex-col">
-                  <div className="font-semibold sm:w-[400px]">
-                    Land Kalpataru Avante
-                  </div>
+                  <div className="font-semibold">Land Kalpataru Avante</div>
                   <div>Shamshabad, Rangareddy Dist</div>
                 </div>
-                <div className="border border-gray-300 md:mt-0 mt-1 w-full sm:w-[280px]"></div>
+                <div className="border border-gray-300 mt-1 w-full"></div>
                 <div className="flex gap-3">
-                  <div className="text-black font-bold">Rs 1.2Cr </div>
+                  <div className="text-black font-bold">Rs 1.2Cr</div>
                   <div className="text-black font-bold">|</div>
                   <div className="font-bold">2546 sqft</div>
                 </div>
@@ -34,7 +37,9 @@ function PersonalizedRecommendations() {
             </div>
           </div>
           {/* Box : 2 */}
-          <div className="flex p-4 border border-gray-300 rounded-md w-full sm:w-[calc(50%-12px)]">
+          <div className="flex p-4 border border-gray-300 rounded-md w-full md:w-1/2">
+            {" "}
+            {/* Ensure full width on mobile */}
             <div className="flex gap-4">
               <img
                 src={RecommendImgOne}
@@ -43,14 +48,12 @@ function PersonalizedRecommendations() {
               />
               <div className="flex flex-col justify-around">
                 <div className="flex flex-col">
-                  <div className="font-semibold sm:w-[400px]">
-                    Land Kalpataru Avante
-                  </div>
+                  <div className="font-semibold">Land Kalpataru Avante</div>
                   <div>Shamshabad, Rangareddy Dist</div>
                 </div>
-                <div className="border border-gray-300 md:mt-0 mt-1 w-full sm:w-[280px]"></div>
+                <div className="border border-gray-300 mt-1 w-full"></div>
                 <div className="flex gap-3">
-                  <div className="text-black font-bold">Rs 1.2Cr </div>
+                  <div className="text-black font-bold">Rs 1.2Cr</div>
                   <div className="text-black font-bold">|</div>
                   <div className="font-bold">2546 sqft</div>
                 </div>

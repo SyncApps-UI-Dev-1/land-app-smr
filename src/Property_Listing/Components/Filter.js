@@ -20,16 +20,14 @@ function Filter() {
 
         {/* Mobile View Buttons */}
         <div className="block md:hidden w-full flex flex-col items-center gap-4">
-          <Button className="w-full max-w-xs" paddingX="4" paddingY="2">
+          <Button className="w-full max-w-xs py-2 border border-gray-300 rounded-md">
             <span className="flex gap-2 items-center justify-center">
               <img src={Location} alt="Location Icon" className="w-4 h-4" />
               Map View
             </span>
           </Button>
           <Button
-            className="w-full max-w-xs"
-            paddingX="4"
-            paddingY="2"
+            className="w-full max-w-xs py-2 border border-gray-300 rounded-md"
             rounded="rounded-md"
           >
             <span className="flex gap-2 items-center justify-center">

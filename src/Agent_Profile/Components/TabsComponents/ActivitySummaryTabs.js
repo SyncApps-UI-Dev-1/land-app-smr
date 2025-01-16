@@ -1,47 +1,92 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Button from "../../Common/Button";
-import Report from "../../Agent_Profile/images/Report.svg";
-import SearchInput from "../../Common/SearchInput";
-import FilterIcon from "../../Agent_Profile/images/../../Property_Listing/Components/images/filterIcon.svg";
-import DeleteIcon from "../../Agent_Profile/images/Delete.svg";
-import EditIcon from "../../Agent_Profile/images/edit.svg";
-import PaginationReusable from "./PaginationReusable";
-import prevIcon from "../../Agent_Profile/images/LeftArrow.svg";
-import NextIcon from "../../Agent_Profile/images/right-arrow.svg";
+import FilterIcon from "../../../Property_Listing/Components/images/filterIcon.svg";
+import DeleteIcon from "../../images/Delete.svg";
+import EditIcon from "../../images/edit.svg";
+import prevIcon from "../../images/LeftArrow.svg";
+import NextIcon from "../../images/right-arrow.svg";
+import Button from "../../../Common/Button";
+import SearchInput from "../../../Common/SearchInput";
+import PaginationReusable from "../../../Dashboard/User_Dashboard/PaginationReusable";
 
-function ActivitySummary({
+function ActivitySummaryTabs({
   title = "Activity Summary",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.",
-  buttons = ["View all", "Monitored", "Shortlisted"],
+  buttons = ["All History", "Contacted"],
   className,
 
   tableHeaders = [
+    "Investor Name",
     "Property Name",
-    "Owner Name",
-    "Inquiry Date",
-    "Price",
+    "Contacted",
     "Location",
-    "Next Action",
+    "Status",
   ],
-  tableData = Array(9).fill(
+  tableData = [
     {
-      propertyName: "Janapriya Ventures",
-      ownerName: "Arun",
-      inquiryDate: "22 Jan 2025",
-      price: "1.0 CR",
-      location: "Shamshabad, Hyderabad",
-      nextAction: "Schedule Visit",
+      InvestorName: "Charles T",
+      PropertyName: "Janapriya Properties",
+      Contacted: "Dec 9, 2024, 3 PM",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Active",
     },
     {
-      propertyName: "Janapriya Ventures",
-      ownerName: "Arun",
-      inquiryDate: "22 Jan 2025",
-      price: "1.0 CR",
-      location: "Shamshabad, Hyderabad",
-      nextAction: "Schedule Visit",
-    }
-  ),
+      InvestorName: "Charles T",
+      PropertyName: "Janapriya Properties",
+      Contacted: "Dec 9, 2024, 3 PM",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Revisit Appointment",
+    },
+    {
+      InvestorName: "Charles T",
+      PropertyName: "Janapriya Properties",
+      Contacted: "Dec 9, 2024, 3 PM",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Revisit Appointment",
+    },
+    {
+      InvestorName: "Charles T",
+      PropertyName: "Janapriya Properties",
+      Contacted: "Dec 9, 2024, 3 PM",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Revisit Appointment",
+    },
+    {
+      InvestorName: "Charles T",
+      PropertyName: "Janapriya Properties",
+      Contacted: "Dec 9, 2024, 3 PM",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Active",
+    },
+    {
+      InvestorName: "Charles T",
+      PropertyName: "Janapriya Properties",
+      Contacted: "Dec 9, 2024, 3 PM",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Active",
+    },
+    {
+      InvestorName: "Charles T",
+      PropertyName: "Janapriya Properties",
+      Contacted: "Dec 9, 2024, 3 PM",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Active",
+    },
+    {
+      InvestorName: "Charles T",
+      PropertyName: "Janapriya Properties",
+      Contacted: "Dec 9, 2024, 3 PM",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Active",
+    },
+    {
+      InvestorName: "Charles T",
+      PropertyName: "Janapriya Properties",
+      Contacted: "Dec 9, 2024, 3 PM",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Active",
+    },
+  ],
 }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Number of items per page
@@ -50,6 +95,9 @@ function ActivitySummary({
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  // Multiply tableData by repeating it 3 times to make 6 entries
+  // const tableDataExpanded = [...tableData, ...tableData, ...tableData];
 
   // Paginate table data based on current page
   const paginateData = () => {
@@ -62,16 +110,11 @@ function ActivitySummary({
       <div className="border border-gray-300 rounded-md mt-6 p-4 max-w-[98%] mx-auto">
         <div className="flex flex-col">
           <div className="flex flex-wrap items-center">
-            <div className="text-black font-semibold">{title}</div>
-            <div className="flex ml-auto gap-2">
-              <Button className="ml-auto mb-4 md:mb-0 mt-2 md:mt-0 gap-1 p-2 border border-gray-300 rounded-md items-center">
-                <img src={Report} alt="Report" className="w-4 h-4" />
-                <span className="text-sm">Report</span>
-              </Button>
-            </div>
+            <div className="text-black font-semibold">Search History</div>
           </div>
-          <div className={`text-gray-300 -mt-2 text-sm ${className}`}>
-            {description}
+          <div className={`text-gray-300 -mt-1 text-sm ${className}`}>
+            Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum
           </div>
         </div>
         <div className="w-full border border-gray-300 mt-4"></div>
@@ -107,7 +150,7 @@ function ActivitySummary({
         </div>
         <div className="w-full border mt-3 md:mt-0 border-gray-300"></div>
         {/* Table Header */}
-        <div className="flex flex-col md:flex-row justify-between border-b border-gray-200 px-2 py-3">
+        <div className="flex flex-col md:flex-row gap-14 border-b border-gray-200 px-2 py-3">
           {tableHeaders.map((header, index) => (
             <div key={index} className="text-black font-medium">
               {header}
@@ -118,24 +161,23 @@ function ActivitySummary({
         {paginateData().map((row, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row justify-between border-b border-gray-200 px-2 py-3"
+            className="flex flex-col gap-8 space-x-1 md:flex-row border-b border-gray-200 px-2 py-3"
           >
-            <div className="flex gap-3 items-center">
+            <div className="flex items-center gap-2">
               <input type="checkbox" />
-              <div>{row.propertyName}</div>
+              <div>{row.InvestorName}</div>
             </div>
-            <div className="hidden md:block">{row.ownerName}</div>
-            <div className="hidden md:block -mr-10">{row.inquiryDate}</div>
-            <div className="hidden md:block -mr-12">{row.price}</div>
-            <div className="hidden md:block -mr-12">{row.location}</div>
-            <div className="flex items-center gap-2 mt-2 md:mt-0 -mr-12 border border-gray-300 px-1 rounded-md w-[110px] md:w-[110px]">
+            <div className="hidden md:block">{row.PropertyName}</div>
+            <div className="hidden md:block">{row.Contacted}</div>
+            <div className="hidden md:block">{row.Location}</div>
+            <div className=" flex items-center gap-2 mt-2 md:mt-0 -mr-24 border border-gray-300 px-1 rounded-md w-[110px] md:w-[110px]">
               <div
                 className={`w-2 h-2 ${
-                  row.nextAction === "Active" ? "bg-green-500" : "bg-blue-500"
+                  row.Status === "Active" ? "bg-green-500" : "bg-blue-500"
                 } rounded-full`}
               ></div>
               <span className="text-black text-xs font-medium">
-                {row.nextAction}
+                {row.Status}
               </span>
             </div>
 
@@ -162,14 +204,14 @@ function ActivitySummary({
         className="w-4 h-4 flex justify-center items-center cursor-pointer"
         py="py-4"
         px="px-6"
-        onPageChange={handlePageChange} // Pass the page change handler to PaginationReusable
-        currentPage={currentPage} // Pass the current page
+        onPageChange={handlePageChange}
+        currentPage={currentPage}
       />
     </div>
   );
 }
 
-ActivitySummary.propTypes = {
+ActivitySummaryTabs.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   buttons: PropTypes.arrayOf(PropTypes.string),
@@ -177,14 +219,15 @@ ActivitySummary.propTypes = {
   tableData: PropTypes.arrayOf(
     PropTypes.shape({
       propertyName: PropTypes.string,
-      ownerName: PropTypes.string,
-      inquiryDate: PropTypes.string,
-      price: PropTypes.string,
-      location: PropTypes.string,
-      nextAction: PropTypes.string,
+      PublishedDate: PropTypes.string,
+      Price: PropTypes.string,
+      Views: PropTypes.string,
+      Leads: PropTypes.string,
+      Location: PropTypes.string,
+      Status: PropTypes.string,
     })
   ),
   circleColor: PropTypes.string,
 };
 
-export default ActivitySummary;
+export default ActivitySummaryTabs;

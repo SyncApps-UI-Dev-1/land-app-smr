@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import Button from "../../Common/Button";
 import Report from "../../Agent_Profile/images/Report.svg";
@@ -6,11 +6,11 @@ import SearchInput from "../../Common/SearchInput";
 import FilterIcon from "../../Agent_Profile/images/../../Property_Listing/Components/images/filterIcon.svg";
 import DeleteIcon from "../../Agent_Profile/images/Delete.svg";
 import EditIcon from "../../Agent_Profile/images/edit.svg";
-import PaginationReusable from "./PaginationReusable";
 import prevIcon from "../../Agent_Profile/images/LeftArrow.svg";
 import NextIcon from "../../Agent_Profile/images/right-arrow.svg";
+import PaginationReusable from "../User_Dashboard/PaginationReusable";
 
-function ActivitySummary({
+function ActivitySummaryAgent({
   title = "Activity Summary",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.",
   buttons = ["View all", "Monitored", "Shortlisted"],
@@ -18,33 +18,118 @@ function ActivitySummary({
 
   tableHeaders = [
     "Property Name",
-    "Owner Name",
-    "Inquiry Date",
+    "Published Date",
     "Price",
+    "Views",
+    "Leads",
     "Location",
-    "Next Action",
+    "Status",
   ],
-  tableData = Array(9).fill(
+  tableData = [
     {
       propertyName: "Janapriya Ventures",
-      ownerName: "Arun",
-      inquiryDate: "22 Jan 2025",
-      price: "1.0 CR",
-      location: "Shamshabad, Hyderabad",
-      nextAction: "Schedule Visit",
+      PublishedDate: "22 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "12",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Active",
     },
     {
       propertyName: "Janapriya Ventures",
-      ownerName: "Arun",
-      inquiryDate: "22 Jan 2025",
-      price: "1.0 CR",
-      location: "Shamshabad, Hyderabad",
-      nextAction: "Schedule Visit",
-    }
-  ),
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+  ],
 }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Number of items per page
+  const fileInputRef = useRef(null);
 
   // Function to handle page change
   const handlePageChange = (pageNumber) => {
@@ -57,6 +142,18 @@ function ActivitySummary({
     return tableData.slice(startIndex, startIndex + itemsPerPage);
   };
 
+  // File upload button functionality
+  const handleFileButtonClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log("File selected:", file.name);
+    }
+  };
+
   return (
     <div className="px-5">
       <div className="border border-gray-300 rounded-md mt-6 p-4 max-w-[98%] mx-auto">
@@ -66,8 +163,25 @@ function ActivitySummary({
             <div className="flex ml-auto gap-2">
               <Button className="ml-auto mb-4 md:mb-0 mt-2 md:mt-0 gap-1 p-2 border border-gray-300 rounded-md items-center">
                 <img src={Report} alt="Report" className="w-4 h-4" />
-                <span className="text-sm">Report</span>
+                <span className="text-sm">Download CSV</span>
               </Button>
+              <Button
+                bg="primary-600"
+                className="ml-auto bg-primary text-white mb-4 md:mb-0 mt-2 md:mt-0 gap-1 p-2 border border-gray-300 rounded-md items-center"
+                onClick={handleFileButtonClick}
+              >
+                <span className="text-sm flex gap-2">
+                  <span>+</span>
+                  <span>Create New</span>
+                </span>
+              </Button>
+              {/* Hidden file input */}
+              <input
+                type="file"
+                ref={fileInputRef}
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+              />
             </div>
           </div>
           <div className={`text-gray-300 -mt-2 text-sm ${className}`}>
@@ -106,39 +220,37 @@ function ActivitySummary({
           </div>
         </div>
         <div className="w-full border mt-3 md:mt-0 border-gray-300"></div>
-        {/* Table Header */}
-        <div className="flex flex-col md:flex-row justify-between border-b border-gray-200 px-2 py-3">
+        <div className="flex flex-col md:flex-row gap-14 border-b border-gray-200 px-2 py-3">
           {tableHeaders.map((header, index) => (
             <div key={index} className="text-black font-medium">
               {header}
             </div>
           ))}
         </div>
-        {/* Table Rows */}
         {paginateData().map((row, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row justify-between border-b border-gray-200 px-2 py-3"
+            className="flex flex-col gap-8 space-x-1 md:flex-row border-b border-gray-200 px-2 py-3"
           >
-            <div className="flex gap-3 items-center">
+            <div className="flex items-center gap-2">
               <input type="checkbox" />
               <div>{row.propertyName}</div>
             </div>
-            <div className="hidden md:block">{row.ownerName}</div>
-            <div className="hidden md:block -mr-10">{row.inquiryDate}</div>
-            <div className="hidden md:block -mr-12">{row.price}</div>
-            <div className="hidden md:block -mr-12">{row.location}</div>
-            <div className="flex items-center gap-2 mt-2 md:mt-0 -mr-12 border border-gray-300 px-1 rounded-md w-[110px] md:w-[110px]">
+            <div className="hidden md:block">{row.PublishedDate}</div>
+            <div className="hidden md:block">{row.Price}</div>
+            <div className="hidden md:block">{row.Views}</div>
+            <div className="hidden md:block">{row.Leads}</div>
+            <div className="hidden md:block">{row.Location}</div>
+            <div className="flex items-center gap-2 mt-2 md:mt-0 -mr-24 border border-gray-300 px-1 rounded-md w-[110px] md:w-[110px]">
               <div
                 className={`w-2 h-2 ${
-                  row.nextAction === "Active" ? "bg-green-500" : "bg-blue-500"
+                  row.Status === "Active" ? "bg-green-500" : "bg-blue-500"
                 } rounded-full`}
               ></div>
               <span className="text-black text-xs font-medium">
-                {row.nextAction}
+                {row.Status}
               </span>
             </div>
-
             <div className="flex gap-2 mt-2 md:mt-0">
               <img
                 src={DeleteIcon}
@@ -162,14 +274,14 @@ function ActivitySummary({
         className="w-4 h-4 flex justify-center items-center cursor-pointer"
         py="py-4"
         px="px-6"
-        onPageChange={handlePageChange} // Pass the page change handler to PaginationReusable
-        currentPage={currentPage} // Pass the current page
+        onPageChange={handlePageChange}
+        currentPage={currentPage}
       />
     </div>
   );
 }
 
-ActivitySummary.propTypes = {
+ActivitySummaryAgent.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   buttons: PropTypes.arrayOf(PropTypes.string),
@@ -177,14 +289,14 @@ ActivitySummary.propTypes = {
   tableData: PropTypes.arrayOf(
     PropTypes.shape({
       propertyName: PropTypes.string,
-      ownerName: PropTypes.string,
-      inquiryDate: PropTypes.string,
-      price: PropTypes.string,
-      location: PropTypes.string,
-      nextAction: PropTypes.string,
+      PublishedDate: PropTypes.string,
+      Price: PropTypes.string,
+      Views: PropTypes.string,
+      Leads: PropTypes.string,
+      Location: PropTypes.string,
+      Status: PropTypes.string,
     })
   ),
-  circleColor: PropTypes.string,
 };
 
-export default ActivitySummary;
+export default ActivitySummaryAgent;

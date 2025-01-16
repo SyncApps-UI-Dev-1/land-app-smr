@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Button = ({
   onClick,
-  bg,
+  bg = "",
   children,
   border,
   text,
@@ -14,12 +14,13 @@ const Button = ({
   rounded,
   flex,
   gap,
-  cursor,
+  cursor = "cursor-pointer",
 }) => {
   return (
     <button
+      style={{ cursor: "pointer" }}
       type={type}
-      className={`flex items-center ${cursor} ${gap} ${border} ${
+      className={`flex items-center justify-center ${cursor} ${gap} ${border} ${
         rounded ? `rounded-md` : ""
       } ${py} ${px} ${bg} ${text} ${className}`}
       onClick={onClick}

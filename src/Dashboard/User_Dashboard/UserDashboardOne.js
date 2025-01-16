@@ -1,4 +1,3 @@
-// UserDashboard Component
 import Sidebar from "../../Agent_Profile/Components/Sidebar";
 import ActivityFeed from "./ActivityFeed";
 import ActivitySummary from "./ActivitySummary";
@@ -6,18 +5,21 @@ import FilterDashboard from "./FilterDashboard";
 import PersonalizedRecommendations from "./PersonalizedRecommendations";
 import Welcome from "./Welcome";
 
-function UserDashboard() {
+function UserDashboardOne() {
   return (
     <div>
       <div className="flex h-screen">
-        <Sidebar rounded="rounded-md border border-gray-300">
-          {/* Add any child components for the Sidebar here */}
-        </Sidebar>
-        <div className="w-full mt-1 -z-40 relative">
-          <Welcome />
-          <FilterDashboard />
+        <Sidebar />
+        <div className="flex flex-col w-full">
+          <div className="w-full">
+            <Welcome />
+          </div>
+          <div className="md:px-10 px-4">
+            <FilterDashboard />
+          </div>
           <ActivityFeed />
           <PersonalizedRecommendations />
+
           <ActivitySummary />
         </div>
       </div>
@@ -25,4 +27,4 @@ function UserDashboard() {
   );
 }
 
-export default UserDashboard;
+export default UserDashboardOne;

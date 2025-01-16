@@ -1,12 +1,13 @@
 import Sidebar from "../../Agent_Profile/Components/Sidebar";
 import ActivityFeed from "../User_Dashboard/ActivityFeed";
-import FilterDashboard from "../User_Dashboard/FilterDashboard";
 import Welcome from "../User_Dashboard/Welcome";
 import TopRightArrowGreen from "../../Agent_Profile/images/arrow-upper-right-green.svg";
 import TopRightArrowRed from "../../Agent_Profile/images/arrow-upper-right-Red.svg";
 import LeadMang from "./LeadMang";
+import FilterDashboard from "../User_Dashboard/FilterDashboard";
+import ActivitySummaryAgent from "./ActivitySummaryAgent";
 
-function AgentDashboard() {
+function AgentDashboardOne() {
   const customData = [
     {
       title: "Total Listings",
@@ -33,20 +34,27 @@ function AgentDashboard() {
       arrow: TopRightArrowRed,
     },
   ];
-
   return (
     <div>
-      <div className="flex h-screen px-0">
+      <div className="flex h-screen z-40">
         <Sidebar />
-        <div className="w-full -z-40 relative bg-cover bg-center border-b-0 border border-gray-200">
-          <Welcome />
-          <FilterDashboard />
+        <div className=" w-full">
+          <Welcome
+            displayHello={false}
+            userName="Welcome"
+            message="Pradeep Kumar"
+            progress="Your current summary and activity."
+          />
+          <div className="md:px-10 px-4">
+            <FilterDashboard />
+          </div>
           <ActivityFeed data={customData} />
           <LeadMang />
+          <ActivitySummaryAgent />
         </div>
       </div>
     </div>
   );
 }
 
-export default AgentDashboard;
+export default AgentDashboardOne;

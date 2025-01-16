@@ -31,9 +31,12 @@ const defaultData = [
 ];
 
 // Create a reusable component for the boxes
-function ActivityBox({ title, count, percentage, arrow }) {
+function ActivityBox({ title, count, percentage, arrow, dynamicWidth }) {
   return (
-    <div className="flex flex-col shadow-md gap-5 p-4 rounded-lg border border-gray-300 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-12px)]">
+    <div
+      className={`flex flex-col shadow-md gap-5 p-4 rounded-lg border border-gray-300 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-12px)]`}
+      style={{ width: `calc(${dynamicWidth}px)` }}
+    >
       <div className="flex items-center justify-between">
         <div className="text-gray-600 font-semibold">{title}</div>
         <img src={DotsSvg} alt="dots icon" className="w-4 h-4" />
@@ -51,7 +54,7 @@ function ActivityBox({ title, count, percentage, arrow }) {
 
 function ActivityFeed({ data = defaultData }) {
   return (
-    <div className="flex flex-wrap gap-4 px-4 sm:px-10 mt-6">
+    <div className={`flex flex-wrap gap-4 px-4 sm:px-10 mt-6 `}>
       {data.map((item, index) => (
         <ActivityBox
           key={index}
