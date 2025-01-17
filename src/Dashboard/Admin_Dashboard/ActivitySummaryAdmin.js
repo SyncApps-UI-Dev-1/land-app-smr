@@ -257,20 +257,21 @@ function ActivitySummaryAdmin({
   };
 
   return (
-    <div className="px-5">
+    <div className="px-4 md:px-5">
       <div className="border border-gray-300 rounded-md mt-6 p-4 max-w-[98%] mx-auto">
         <div className="flex flex-col">
           <div className="flex flex-wrap items-center">
-            <div className="text-black font-semibold">{title}</div>
+            <div className="text-black font-semibold text-base md:text-lg">
+              {title}
+            </div>
             <div className="flex ml-auto gap-2">
               <Button
                 className="ml-auto mb-4 md:mb-0 mt-2 md:mt-0 gap-1 p-2 border border-gray-300 rounded-md items-center"
                 onClick={handleBulkUploadClick}
               >
-                <img src={BulkUpload} alt="Report" className="w-4 h-4" />
-                <span className="text-sm">Bulk Upload</span>
+                <img src={BulkUpload} alt="Bulk Upload" className="w-4 h-4" />
+                <span className="text-sm hidden md:block">Bulk Upload</span>
               </Button>
-
               <input
                 type="file"
                 ref={fileInputRef}
@@ -279,18 +280,18 @@ function ActivitySummaryAdmin({
               />
             </div>
           </div>
-          <div className={`text-gray-300 -mt-2 text-sm ${className}`}>
+          <div className={`text-gray-400 mt-2 text-sm ${className}`}>
             {description}
           </div>
         </div>
         <div className="w-full border border-gray-300 mt-4"></div>
-        <div className="flex flex-wrap items-center gap-4">
-          <div className="flex mt-4 mb-4">
+        <div className="flex flex-wrap items-center gap-4 mt-4">
+          <div className="flex flex-wrap">
             {buttons.map((button, index) => (
               <Button
                 key={index}
                 border="border border-gray-300"
-                className={`py-1 px-3 text-sm md:text-base ${
+                className={`py-1 px-3 text-sm ${
                   index === 0
                     ? "rounded-l-md"
                     : index === buttons.length - 1
@@ -302,71 +303,85 @@ function ActivitySummaryAdmin({
               </Button>
             ))}
           </div>
-          <div className="flex items-center ml-auto gap-3 w-full md:w-auto">
+          <div className="flex items-center ml-auto gap-2 w-full md:w-auto">
             <SearchInput className="w-full md:w-[300px]" py="py-1.5" />
             <Button
               border="border border-gray-300"
-              className="flex  md:gap-2 md:p-2 py-2 gap-1 p-4 rounded-md"
-              py="py-1"
+              className="flex gap-2 p-2 rounded-md items-center"
             >
-              <img src={FilterIcon} alt="Filter" />
-              <span className=" md:text-sm text-xs md:mr-0 mr-3">Filter</span>
+              <img src={FilterIcon} alt="Filter" className="w-4 h-4" />
+              <span className="text-xs md:text-sm hidden md:block">Filter</span>
             </Button>
           </div>
         </div>
-        <div className="w-full border mt-3 md:mt-0 border-gray-300"></div>
-        <div className="flex flex-col md:flex-row gap-14 border-b border-gray-200 px-2 py-3">
-          {tableHeaders.map((header, index) => (
-            <div key={index} className="text-black font-medium">
-              {header}
-            </div>
-          ))}
+        <div className="w-full border mt-3 md:mt-4 border-gray-300"></div>
+        <div className="overflow-x-auto">
+          <table className="table-auto w-full border-collapse border-spacing-0 mt-4">
+            <thead>
+              <tr className="border-b border-gray-200">
+                {tableHeaders.map((header, index) => (
+                  <th
+                    key={index}
+                    className="text-left text-black font-medium px-2 py-3"
+                  >
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {paginateData().map((row, index) => (
+                <tr key={index} className="border-b border-gray-200">
+                  <td className="px-2 py-3">
+                    <div className="flex items-center gap-2">
+                      <input type="checkbox" />
+                      <div>{row.propertyName}</div>
+                    </div>
+                  </td>
+                  <td className="px-2 py-3">{row.PublishedDate}</td>
+                  <td className="px-2 py-3">{row.Price}</td>
+                  <td className="px-2 py-3">{row.Views}</td>
+                  <td className="px-2 py-3">{row.Leads}</td>
+                  <td className="px-2 py-3">{row.Location}</td>
+                  <td className="px-2 py-3">
+                    <div className="flex items-center gap-2 border border-gray-300 px-1 rounded-md w-[110px]">
+                      <div
+                        className={`w-2 h-2 ${
+                          row.Status === "Active"
+                            ? "bg-green-500"
+                            : row.Status === "Sold"
+                            ? "bg-blue-900"
+                            : row.Status === "Under Review"
+                            ? "bg-orange-600"
+                            : "bg-purple-600"
+                        } rounded-full`}
+                      ></div>
+                      <span className="text-black text-xs font-medium">
+                        {row.Status}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-2 py-3">
+                    <div className="flex gap-2">
+                      <img
+                        src={DeleteIcon}
+                        alt="Delete"
+                        className="w-4 h-4 cursor-pointer"
+                      />
+                      <img
+                        src={EditIcon}
+                        alt="Edit"
+                        className="w-4 h-4 cursor-pointer"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-        {paginateData().map((row, index) => (
-          <div
-            key={index}
-            className="flex flex-col gap-8 space-x-1 md:flex-row border-b border-gray-200 px-2 py-3"
-          >
-            <div className="flex items-center gap-2">
-              <input type="checkbox" />
-              <div>{row.propertyName}</div>
-            </div>
-            <div className="hidden md:block">{row.PublishedDate}</div>
-            <div className="hidden md:block">{row.Price}</div>
-            <div className="hidden md:block">{row.Views}</div>
-            <div className="hidden md:block">{row.Leads}</div>
-            <div className="hidden md:block">{row.Location}</div>
-            <div className="flex items-center gap-2 mt-2 md:mt-0 -mr-24 border border-gray-300 px-1 rounded-md w-[110px] md:w-[110px]">
-              <div
-                className={`w-2 h-2 ${
-                  row.Status === "Active"
-                    ? "bg-green-500"
-                    : row.Status === "Sold"
-                    ? "bg-blue-900"
-                    : row.Status === "Under Review"
-                    ? "bg-orange-600"
-                    : "bg-purple-600"
-                } rounded-full`}
-              ></div>
-              <span className="text-black text-xs font-medium">
-                {row.Status}
-              </span>
-            </div>
-            <div className="flex gap-2 mt-2 md:mt-0">
-              <img
-                src={DeleteIcon}
-                alt="Delete"
-                className="w-4 h-4 cursor-pointer"
-              />
-              <img
-                src={EditIcon}
-                alt="Edit"
-                className="w-4 h-4 cursor-pointer"
-              />
-            </div>
-          </div>
-        ))}
       </div>
+
       <PaginationReusable
         bgColor="bg-white"
         prevIcon={prevIcon}

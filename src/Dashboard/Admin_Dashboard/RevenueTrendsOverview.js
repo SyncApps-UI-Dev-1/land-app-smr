@@ -1,5 +1,6 @@
 import DotSvg from "../../Agent_Profile/images/dots.svg";
 import Button from "../../Common/Button";
+
 function RevenueTrendsOverview() {
   const cityData = [
     { name: "Hyderabad", percentage: 50 },
@@ -7,20 +8,23 @@ function RevenueTrendsOverview() {
     { name: "Vizag", percentage: 10 },
     { name: "Vijayawada", percentage: 10 },
   ];
+
   return (
-    <div className="mx-10 mt-6 flex">
-      <div className="flex flex-col w-1/3 border border-gray-300 rounded-lg shadow-md p-4">
+    <div className="md:mx-10 mx-4 mt-6 flex flex-col lg:flex-row">
+      <div className="flex flex-col w-full lg:w-1/3 border border-gray-300 rounded-lg shadow-md p-4">
         <div className="flex">
-          <div className="font-semibold">Source Revenue Contribution</div>
+          <div className="font-semibold text-sm md:text-base">
+            Source Revenue Contribution
+          </div>
           <img
             src={DotSvg}
             alt={DotSvg}
             className="w-5 h-5 items-center ml-auto"
           />
         </div>
-        <div className="mt-4 flex gap-2">
+        <div className="mt-4 flex flex-col md:flex-row gap-4 items-center">
           <div
-            className="relative w-36 h-36 rounded-full flex items-center justify-center"
+            className="relative w-24 h-24 md:w-36 md:h-36 rounded-full flex items-center justify-center"
             style={{
               background: `conic-gradient(
         rgba(75, 0, 130, 1) 0% 50%,  /* Dark Purple - 0% to 25% */
@@ -30,12 +34,15 @@ function RevenueTrendsOverview() {
     )`,
             }}
           >
-            <div className="w-20 h-20 bg-gray-100 rounded-full"></div>
+            <div className="w-12 h-12 md:w-20 md:h-20 bg-gray-100 rounded-full"></div>
           </div>
 
           <div>
             {cityData.map((city, index) => (
-              <p key={index} className="flex gap-1 items-center text-sm">
+              <p
+                key={index}
+                className="flex gap-2 items-center text-xs md:text-sm"
+              >
                 <div
                   className={`rounded-full w-2 h-2 ${
                     city.percentage >= 50
@@ -51,60 +58,44 @@ function RevenueTrendsOverview() {
           </div>
         </div>
         <div className="w-full h-[0.40px] bg-gray-300 mt-6"></div>
-        <div className="mt-6 ml-auto border border-gray-300 rounded-lg py-1 text-sm font-semibold shadow-md">
+        <div className="mt-6 ml-auto border border-gray-300 rounded-lg py-1 text-xs md:text-sm font-semibold shadow-md">
           <Button px="px-2">View full report</Button>
         </div>
       </div>
-      <div className="w-2/3 border border-gray-300 p-4 rounded-lg shadow-md ml-4">
+      <div className="w-full lg:w-2/3 border border-gray-300 p-4 rounded-lg shadow-md mt-4 lg:mt-0 lg:ml-4">
         <div className="flex">
-          <div className="font-semibold">Trends in Property Views</div>
+          <div className="font-semibold text-sm md:text-base">
+            Trends in Property Views
+          </div>
           <img
             src={DotSvg}
             alt={DotSvg}
             className="w-5 h-5 items-center ml-auto"
           />
         </div>
-        <div className="text-gray-500 text-sm">
+        <div className="text-gray-500 text-xs md:text-sm">
           40% growth in property views over the last 1 year.
         </div>
         <div className="flex gap-2 items-center mt-2 justify-end">
           <div className="rounded-full bg-primarySecond-900 w-2 h-2"></div>
-          <p>2024</p>
+          <p className="text-xs md:text-sm">2024</p>
           <div className="rounded-full bg-primarySecond-600 w-2 h-2"></div>
-          <p>2023</p>
+          <p className="text-xs md:text-sm">2023</p>
         </div>
-        <div className="flex">
-          <div className="w-1/8 flex justify-center items-center">
-            <div className="transform -rotate-90 whitespace-nowrap origin-bottom">
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/8 flex justify-center items-center">
+            <div className="transform md:-rotate-90 whitespace-nowrap origin-bottom text-xs md:text-sm">
               Trend Views
             </div>
           </div>
           <div className="w-full flex flex-col gap-2 relative">
             {/* Horizontal Lines */}
-            <div className="flex items-center">
-              100
-              <p className="ml-1 border border-gray-200 flex-grow h-[0.60px]"></p>
-            </div>
-            <div className="flex items-center">
-              80
-              <p className="ml-1 border border-gray-200 flex-grow h-[0.60px]"></p>
-            </div>
-            <div className="flex items-center">
-              60
-              <p className="ml-1 border border-gray-200 flex-grow h-[0.60px]"></p>
-            </div>
-            <div className="flex items-center">
-              40
-              <p className="ml-1 border border-gray-200 flex-grow h-[0.60px]"></p>
-            </div>
-            <div className="flex items-center">
-              20
-              <p className="ml-1 border border-gray-200 flex-grow h-[0.60px]"></p>
-            </div>
-            <div className="flex items-center">
-              0
-              <p className="ml-1 border border-gray-200 flex-grow h-[0.60px]"></p>
-            </div>
+            {[100, 80, 60, 40, 20, 0].map((value) => (
+              <div key={value} className="flex items-center">
+                <span className="text-xs md:text-sm">{value}</span>
+                <p className="ml-1 border border-gray-200 flex-grow h-[0.60px]"></p>
+              </div>
+            ))}
 
             {/* Vertical Lines with Curve */}
             <div className="absolute -top-7 left-[5%] w-[95%] h-[100%] flex justify-between items-end">
@@ -123,19 +114,23 @@ function RevenueTrendsOverview() {
             </div>
 
             {/* Month Labels */}
-            <div className="flex gap-3 ml-3 -mt-4">
-              <div>Jan</div>
-              <div>Feb</div>
-              <div>March</div>
-              <div>April</div>
-              <div>May</div>
-              <div>June</div>
-              <div>July</div>
-              <div>August</div>
-              <div>Sep</div>
-              <div>Oct</div>
-              <div>Nov</div>
-              <div>Dec</div>
+            <div className="flex gap-2 justify-between text-[7px] md:text-sm mt-2">
+              {[
+                "Jan",
+                "Feb",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec",
+              ].map((month, index) => (
+                <div key={index}>{month}</div>
+              ))}
             </div>
           </div>
         </div>
