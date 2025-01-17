@@ -6,27 +6,33 @@ const Footer = () => {
       <div className="text-black py-8 px-4 sm:px-8 md:px-16 lg:px-20 font-semibold">
         <div className="flex flex-col sm:flex-row justify-between items-start">
           {/* LandApp Title */}
-          <div className="text-left font-bold text-xl mb-4 sm:mb-0">
+          <a href="/" className="text-left font-bold text-xl mb-4 sm:mb-0">
             LandApp
-          </div>
+          </a>
 
           {/* Navigation Sections */}
           <nav className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-10">
             {/* Services Section */}
             <div>
               <div className="font-semibold mb-2 text-gray-500">Services</div>
-              <div>Hand Holding</div>
-              <div>Land Monitoring</div>
-              <div>Legal Verification</div>
-              <div>Get your land Surveyed</div>
+              <div className="hover:underline">Hand Holding</div>
+              <div className="hover:underline">Land Monitoring</div>
+              <div className="hover:underline">Legal Verification</div>
+              <div className="hover:underline">Get your land Surveyed</div>
             </div>
 
             {/* Company Section */}
-            <div>
+            <div className="flex flex-col">
               <div className="font-semibold mb-2 text-gray-500">Company</div>
-              <div>Terms & Condition</div>
-              <div>Privacy Policy</div>
-              <div>Blog</div>
+              <a className="hover:underline" href="/terms-and-conditions">
+                Terms & Condition
+              </a>
+              <a className="hover:underline" href="/privacy-policy">
+                Privacy Policy
+              </a>
+              <a className="hover:underline" href="/Blog">
+                Blog
+              </a>
             </div>
 
             {/* Contact Section */}

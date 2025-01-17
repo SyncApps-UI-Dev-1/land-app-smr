@@ -12,9 +12,7 @@ function PathInfo() {
         </li>
         <span className="text-gray-400">›</span>
         <li>
-          <a href="/property-list" className="text-blue-500 hover:underline">
-            Property List
-          </a>
+          <a>Property List</a>
         </li>
         <span className="text-gray-400">›</span>
         <li>

@@ -9,8 +9,8 @@ const Button = ({
   text,
   type = "button",
   className = "",
-  py,
-  px,
+  py = "",
+  px = "",
   rounded,
   flex,
   gap,
@@ -40,6 +40,8 @@ Button.propTypes = {
   paddingX: PropTypes.string,
   paddingY: PropTypes.string,
   rounded: PropTypes.string,
+  py: PropTypes.string,
+  px: PropTypes.string,
 };
 
 export default Button;

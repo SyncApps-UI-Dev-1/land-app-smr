@@ -1,7 +1,15 @@
+import { useState } from "react";
 import Box from "../../Common/box";
 import { properties } from "../../data/data";
+import HeartFill from "../Components/images/HeartFill.svg";
 
 function PremiumProperties() {
+  const [like, setLike] = useState(properties.map(() => true));
+  function toggleLike(index) {
+    setLike((prevlike) =>
+      prevlike.map((like, i) => (i === index ? !like : like))
+    );
+  }
   return (
     <div className="md:px-20 mt-6">
       <h2 className="md:text-xl md:text-start text-center text-[14px] font-bold mb-4">
@@ -23,16 +31,27 @@ function PremiumProperties() {
                 />
 
                 {/* Heart and Share Icons */}
-                <div className="absolute top-2 right-2 flex gap-2">
-                  <img
-                    src={property.imgheart}
-                    alt="Heart Icon"
-                    className="w-8 h-8 bg-white rounded-full p-1 shadow-md"
-                  />
+                <div className="absolute top-2 right-2 flex gap-2" key={index}>
+                  {like[index] ? (
+                    <img
+                      src={property.imgheart}
+                      onClick={() => toggleLike(index)}
+                      alt="Heart Icon"
+                      className={`cursor-pointer w-8 h-8 bg-white rounded-full p-1 shadow-md`}
+                    />
+                  ) : (
+                    <img
+                      src={HeartFill}
+                      onClick={() => toggleLike(index)}
+                      alt="Filled Heart Icon" // Corrected alt attribute for filled heart
+                      className="absolute bg-white rounded-full p-1 shadow-md top-0 right-12 cursor-pointer"
+                    />
+                  )}
+
                   <img
                     src={property.imgshare}
                     alt="Share Icon"
-                    className="w-8 h-8 bg-white rounded-full p-1 shadow-md"
+                    className="cursor-pointer w-8 h-8 bg-white rounded-full p-1 shadow-md"
                   />
                 </div>
 

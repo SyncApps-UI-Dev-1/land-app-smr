@@ -15,7 +15,6 @@ function ActivitySummary({
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.",
   buttons = ["View all", "Monitored", "Shortlisted"],
   className,
-
   tableHeaders = [
     "Property Name",
     "Owner Name",
@@ -24,7 +23,7 @@ function ActivitySummary({
     "Location",
     "Next Action",
   ],
-  tableData = Array(9).fill(
+  tableData = Array(30).fill(
     {
       propertyName: "Janapriya Ventures",
       ownerName: "Arun",
@@ -106,65 +105,80 @@ function ActivitySummary({
           </div>
         </div>
         <div className="w-full border mt-3 md:mt-0 border-gray-300"></div>
-        {/* Table Header */}
-        <div className="flex flex-col md:flex-row justify-between border-b border-gray-200 px-2 py-3">
-          {tableHeaders.map((header, index) => (
-            <div key={index} className="text-black font-medium">
-              {header}
-            </div>
-          ))}
-        </div>
-        {/* Table Rows */}
-        {paginateData().map((row, index) => (
-          <div
-            key={index}
-            className="flex flex-col md:flex-row justify-between border-b border-gray-200 px-2 py-3"
-          >
-            <div className="flex gap-3 items-center">
-              <input type="checkbox" />
-              <div>{row.propertyName}</div>
-            </div>
-            <div className="hidden md:block">{row.ownerName}</div>
-            <div className="hidden md:block -mr-10">{row.inquiryDate}</div>
-            <div className="hidden md:block -mr-12">{row.price}</div>
-            <div className="hidden md:block -mr-12">{row.location}</div>
-            <div className="flex items-center gap-2 mt-2 md:mt-0 -mr-12 border border-gray-300 px-1 rounded-md w-[110px] md:w-[110px]">
-              <div
-                className={`w-2 h-2 ${
-                  row.nextAction === "Active" ? "bg-green-500" : "bg-blue-500"
-                } rounded-full`}
-              ></div>
-              <span className="text-black text-xs font-medium">
-                {row.nextAction}
-              </span>
-            </div>
 
-            <div className="flex gap-2 mt-2 md:mt-0">
-              <img
-                src={DeleteIcon}
-                alt="Delete"
-                className="w-4 h-4 cursor-pointer"
-              />
-              <img
-                src={EditIcon}
-                alt="Edit"
-                className="w-4 h-4 cursor-pointer"
-              />
-            </div>
-          </div>
-        ))}
+        {/* Table Header */}
+        <table className="w-full table-auto border-collapse mt-4">
+          <thead className="bg-gray-100">
+            <tr>
+              {tableHeaders.map((header, index) => (
+                <th
+                  key={index}
+                  className="py-2 px-4 text-black font-medium text-left border-b border-gray-200"
+                >
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          {/* Table Rows */}
+          <tbody>
+            {paginateData().map((row, index) => (
+              <tr key={index} className="border-b border-gray-200">
+                <td className="py-3 px-4 flex items-center gap-3">
+                  <input type="checkbox" />
+                  {row.propertyName}
+                </td>
+                <td className="hidden md:table-cell py-3 px-4">
+                  {row.ownerName}
+                </td>
+                <td className="hidden md:table-cell py-3 px-4">
+                  {row.inquiryDate}
+                </td>
+                <td className="hidden md:table-cell py-3 px-4">{row.price}</td>
+                <td className="hidden md:table-cell py-3 px-4">
+                  {row.location}
+                </td>
+                <td className="py-3 px-4 flex items-center gap-2">
+                  <div
+                    className={`w-2 h-2 ${
+                      row.nextAction === "Active"
+                        ? "bg-green-500"
+                        : "bg-blue-500"
+                    } rounded-full`}
+                  ></div>
+                  <span className="text-black text-xs font-medium">
+                    {row.nextAction}
+                  </span>
+                </td>
+                <td className="py-3 px-4 flex gap-2">
+                  <img
+                    src={DeleteIcon}
+                    alt="Delete"
+                    className="w-4 h-4 cursor-pointer"
+                  />
+                  <img
+                    src={EditIcon}
+                    alt="Edit"
+                    className="w-4 h-4 cursor-pointer"
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <PaginationReusable
+          bgColor="bg-white"
+          prevIcon={prevIcon}
+          NextIcon={NextIcon}
+          border="border border-gray-400"
+          className="w-4 h-4 flex justify-center items-center cursor-pointer"
+          py="py-4"
+          px="px-6"
+          onPageChange={handlePageChange} // Pass the page change handler to PaginationReusable
+          currentPage={currentPage} // Pass the current page
+          totalDataLength={tableData.length} // Pass your data length here
+        />
       </div>
-      <PaginationReusable
-        bgColor="bg-white"
-        prevIcon={prevIcon}
-        NextIcon={NextIcon}
-        border="border border-gray-400"
-        className="w-4 h-4 flex justify-center items-center cursor-pointer"
-        py="py-4"
-        px="px-6"
-        onPageChange={handlePageChange} // Pass the page change handler to PaginationReusable
-        currentPage={currentPage} // Pass the current page
-      />
     </div>
   );
 }

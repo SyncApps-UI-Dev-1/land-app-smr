@@ -10,8 +10,16 @@ function PaginationReusable({
   px = "px-4",
   onPageChange, // Accept page change handler
   currentPage, // Accept the current page
+  totalDataLength, // Accept the total data length
+  itemsPerPage = 10, // Default to 10 items per page
 }) {
-  const totalPages = 6; // Example total pages (since we're using same data)
+  // Validate totalDataLength and itemsPerPage to avoid invalid calculations
+  const validTotalDataLength =
+    totalDataLength && totalDataLength > 0 ? totalDataLength : 0;
+  const validItemsPerPage = itemsPerPage && itemsPerPage > 0 ? itemsPerPage : 1;
+
+  // Dynamically calculate total pages based on valid values
+  const totalPages = Math.ceil(validTotalDataLength / validItemsPerPage);
 
   return (
     <div className="px-3 flex cursor-pointer flex-col md:flex-row justify-between items-center mt-4 md:gap-70 gap-4">

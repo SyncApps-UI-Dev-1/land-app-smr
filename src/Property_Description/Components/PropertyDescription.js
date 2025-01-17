@@ -4,13 +4,13 @@ import PathInfo from "./PathInfo";
 import VentureDetails from "./ventureDetails";
 import VentureFacilities from "./VentureFacilities";
 import Map from "./Map";
-import MoreDetails from "./MoreDetails";
 import PremiumProperties from "./PremiumProperties";
 import Testimonial from "./Testimonial";
 // import Footer from "../Common/Footer";
 // import Navbar from "../Common/Navbar";
 import Footer from "../../Common/Footer";
 import Navbar from "../../Common/Navbar";
+import PropertyMoreDetails from "./PropertyMoreDetails";
 
 const PropertyDescription = () => {
   return (
@@ -21,7 +21,7 @@ const PropertyDescription = () => {
       <VentureDetails />
       <VentureFacilities />
       <Map />
-      <MoreDetails />
+      <PropertyMoreDetails />
       <PremiumProperties />
       <Testimonial />
       <Footer />

@@ -12,14 +12,14 @@ const PriceDropdown = () => {
   };
 
   return (
-    <div className="relative text-left">
+    <div className="relative text-left w-full md:w-auto">
       {/* Button */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center justify-between px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="flex items-center justify-between px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-auto"
       >
         <span className="flex items-center">
-          <span className="text-gray-600">$</span>
+          <span className="text-gray-600"></span>
           <span className="ml-2">{selectedPrice}</span>
         </span>
         <svg
@@ -38,7 +38,7 @@ const PriceDropdown = () => {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute z-50 right-0 mt-2 w-32 bg-white border border-gray-300 rounded-lg shadow-lg">
+        <div className="absolute w-full z-50 right-0 mt-2 md:w-32 bg-white border border-gray-300 rounded-lg shadow-lg">
           {prices.map((price) => (
             <div
               key={price}

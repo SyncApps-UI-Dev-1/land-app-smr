@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "../Components/images/Dropdown.svg";
 import arrowUp from "../Components/images/arrowup.svg";
 import Clipboard from "../Components/images/clipboard.svg";
-import Heart from "../Components/images/heart.svg";
+import { ReactComponent as Heart } from "../Components/images/heart.svg";
 import Box from "../../Common/box";
 import { propertydetailsOne } from "../../data/data";
 import Button from "../../Common/Button";
 
 const VentureFacilities = () => {
+  const [like, setLike] = useState(false);
+
+  const toggleLike = () => {
+    setLike(!like);
+  };
+
   return (
     <div className="flex flex-col md:flex-row justify-center items-center md:gap-6 gap-72 px-6 md:px-20">
       {/* Content Section */}
@@ -94,7 +100,10 @@ const VentureFacilities = () => {
               <img src={Clipboard} alt={Clipboard} /> Report Property
             </Button>
             <Button className="text-black p-3 rounded-md border border-gray-300 items-center flex gap-2">
-              <img src={Heart} alt={Heart} />
+              <Heart
+                onClick={toggleLike}
+                className={`w-6 h-6 ${like ? "fill-red-500" : ""}`}
+              />
               Shortlist
             </Button>
           </div>

@@ -125,6 +125,105 @@ function ActivitySummaryAgent({
       Location: "Shamshabad, Hyderabad",
       Status: "Featured",
     },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Shamshabad, Hyderabad",
+      Status: "Featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Mehdipatnam, Hyderabad",
+      Status: "Active",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Mehdipatnam, Hyderabad",
+      Status: "Active",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Mehdipatnam, Hyderabad",
+      Status: "Active",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Mehdipatnam, Hyderabad",
+      Status: "Active",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Mehdipatnam, Hyderabad",
+      Status: "Active",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Mehdipatnam, Hyderabad",
+      Status: "Active",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Mehdipatnam, Hyderabad",
+      Status: "Active",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Mehdipatnam, Hyderabad",
+      Status: "Active",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Mehdipatnam, Hyderabad",
+      Status: "Active",
+    },
   ],
 }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -220,51 +319,57 @@ function ActivitySummaryAgent({
           </div>
         </div>
         <div className="w-full border mt-3 md:mt-0 border-gray-300"></div>
-        <div className="flex flex-col md:flex-row gap-14 border-b border-gray-200 px-2 py-3">
-          {tableHeaders.map((header, index) => (
-            <div key={index} className="text-black font-medium">
-              {header}
-            </div>
-          ))}
-        </div>
-        {paginateData().map((row, index) => (
-          <div
-            key={index}
-            className="flex flex-col gap-8 space-x-1 md:flex-row border-b border-gray-200 px-2 py-3"
-          >
-            <div className="flex items-center gap-2">
-              <input type="checkbox" />
-              <div>{row.propertyName}</div>
-            </div>
-            <div className="hidden md:block">{row.PublishedDate}</div>
-            <div className="hidden md:block">{row.Price}</div>
-            <div className="hidden md:block">{row.Views}</div>
-            <div className="hidden md:block">{row.Leads}</div>
-            <div className="hidden md:block">{row.Location}</div>
-            <div className="flex items-center gap-2 mt-2 md:mt-0 -mr-24 border border-gray-300 px-1 rounded-md w-[110px] md:w-[110px]">
-              <div
-                className={`w-2 h-2 ${
-                  row.Status === "Active" ? "bg-green-500" : "bg-blue-500"
-                } rounded-full`}
-              ></div>
-              <span className="text-black text-xs font-medium">
-                {row.Status}
-              </span>
-            </div>
-            <div className="flex gap-2 mt-2 md:mt-0">
-              <img
-                src={DeleteIcon}
-                alt="Delete"
-                className="w-4 h-4 cursor-pointer"
-              />
-              <img
-                src={EditIcon}
-                alt="Edit"
-                className="w-4 h-4 cursor-pointer"
-              />
-            </div>
-          </div>
-        ))}
+        <table className="w-full mt-3">
+          <thead>
+            <tr className="text-black font-medium flex md:flex-row flex-col">
+              {tableHeaders.map((header, index) => (
+                <th key={index} className="py-2 px-5 md:text-center text-left">
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {paginateData().map((row, index) => (
+              <tr
+                key={index}
+                className="border-b border-gray-200 flex md:flex-row flex-col"
+              >
+                <td className="flex items-center gap-2 py-2 px-4">
+                  <input type="checkbox" />
+                  {row.propertyName}
+                </td>
+                <td className="md:table-cell py-2 px-4">{row.PublishedDate}</td>
+                <td className=" md:table-cell py-2 px-4">{row.Price}</td>
+                <td className=" md:table-cell py-2 px-4">{row.Views}</td>
+                <td className=" md:table-cell py-2 px-4">{row.Leads}</td>
+                <td className=" md:table-cell py-2 px-4">{row.Location}</td>
+                <td className="flex items-center gap-2 py-2 px-4">
+                  <div
+                    className={`w-2 h-2 ${
+                      row.Status === "Active" ? "bg-green-500" : "bg-blue-500"
+                    } rounded-full`}
+                  ></div>
+                  <span className="text-black text-xs font-medium">
+                    {row.Status}
+                  </span>
+                </td>
+                <td className="flex gap-2 py-2 px-4">
+                  <img
+                    src={DeleteIcon}
+                    alt="Delete"
+                    className="w-4 h-4 cursor-pointer"
+                  />
+                  <img
+                    src={EditIcon}
+                    alt="Edit"
+                    className="w-4 h-4 cursor-pointer"
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
       <PaginationReusable
         bgColor="bg-white"
@@ -276,6 +381,7 @@ function ActivitySummaryAgent({
         px="px-6"
         onPageChange={handlePageChange}
         currentPage={currentPage}
+        totalDataLength={tableData.length} // Pass your data length here
       />
     </div>
   );

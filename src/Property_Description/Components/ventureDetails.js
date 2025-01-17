@@ -52,15 +52,23 @@ const VentureDetails = () => {
       {/* Right Side: Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 rounded-md mt-4 w-full sm:w-1/3 ml-0 sm:ml-6">
         <div className="border p-4 flex flex-col justify-center items-left gap-1 rounded-md w-full">
-          <p className="text-gray-500 text-sm">Price</p>
-          <p className="font-bold text-xl">70.6 Lakhs</p>
+          <p className="text-gray-500 text-sm md:text-left text-center">
+            Price
+          </p>
+          <p className="font-bold text-xl md:text-left text-center">
+            70.6 Lakhs
+          </p>
           <Button className="bg-black py-2 px-4 text-gray-200 rounded-md w-full sm:w-auto">
             Quotation
           </Button>
         </div>
         <div className="border p-4 flex flex-col justify-center items-left gap-1 rounded-md w-full">
-          <p className="font-bold text-sm text-gray-500">Land Owner</p>
-          <p className="font-bold text-xl">Mr.Sandeep</p>
+          <p className="font-bold text-sm text-gray-500 md:text-left text-center">
+            Land Owner
+          </p>
+          <p className="font-bold text-xl md:text-left text-center">
+            Mr.Sandeep
+          </p>
           <Button className="bg-black text-gray-200 py-2 w-full sm:w-[120px] rounded-md">
             Contact Owner
           </Button>
