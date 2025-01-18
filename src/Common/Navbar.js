@@ -1,14 +1,21 @@
 import { useState } from "react";
-import Avatar from "../Property_Description/Components/images/AvatarFive.svg";
 import { Link } from "react-router-dom";
-// import {
-//   BrowserRouter as router,
-//   Routes,
-//   Route,
-//   Links,
-// } from "react-router-dom";
+import Avatar from "../Property_Description/Components/images/AvatarFive.svg";
 
-function Navbar() {
+// Default Logo (you can also pass a custom logo)
+function Navbar({
+  logoText = "Land App", // Default logo text
+  avatarSrc = "Avatar", // Default avatar (can be passed from parent)
+  avatarAlt = "Avatar", // Default alt text for avatar
+  profileLink = "/Profile", // Default profile link
+  menuItems = [
+    { label: "All Lands", to: "/AllLands" },
+    { label: "Developers", to: "#" },
+    { label: "Lakes", to: "#" },
+    { label: "Premium", to: "#" },
+    { label: "Services", to: "#" },
+  ], // Default menu items
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -20,7 +27,7 @@ function Navbar() {
       {/* Left Section - Logo and Menu */}
       <div className="flex items-center gap-6">
         <Link to="/">
-          <div className="font-bold cursor-pointer">Land App</div>
+          <div className="font-bold cursor-pointer">{logoText}</div>
         </Link>
         {/* Menu */}
         <div
@@ -29,22 +36,21 @@ function Navbar() {
           }`}
         >
           <ul className="flex flex-col font-semibold justify-center items-center md:flex-row md:items-center gap-5 cursor-pointer">
-            {/* <Link to="/">Home</Link> */}
-            <Link to="/AllLands">All Lands</Link>
-            <li>Developers</li>
-            <li>Lakes</li>
-            <li>Premium</li>
-            <li>Services</li>
+            {menuItems.map((item, index) => (
+              <li key={index}>
+                <Link to={item.to}>{item.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
       {/* Right Section - Notifications and Avatar (Hidden in Mobile View) */}
       <div className="flex items-center gap-2">
-        <Link to="/Profile">
+        <Link to={profileLink}>
           <img
             src={Avatar}
-            alt="avatar"
+            alt={avatarAlt}
             className="rounded-full w-8 h-8 ml-2 border border-gray-300 cursor-pointer"
           />
         </Link>

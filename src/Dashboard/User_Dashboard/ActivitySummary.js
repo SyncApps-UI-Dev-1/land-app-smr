@@ -108,48 +108,72 @@ function ActivitySummary({
 
         {/* Table Header */}
         <table className="w-full table-auto border-collapse mt-4">
-          <thead className="bg-gray-100">
+          <thead className="bg-gray-100 w-screen">
             <tr>
               {tableHeaders.map((header, index) => (
                 <th
                   key={index}
-                  className="py-2 px-4 text-black font-medium text-left border-b border-gray-200"
+                  className="py-2 px-2 text-center text-black font-medium border-b border-gray-200"
                 >
                   {header}
                 </th>
               ))}
+              <th className="py-2 px-2 text-black font-medium text-left border-b border-gray-200">
+                Status
+              </th>
             </tr>
           </thead>
-          {/* Table Rows */}
           <tbody>
             {paginateData().map((row, index) => (
-              <tr key={index} className="border-b border-gray-200">
-                <td className="py-3 px-4 flex items-center gap-3">
-                  <input type="checkbox" />
+              <tr key={index} className="border-b border-gray-200 text-center">
+                {/* Property Name */}
+                <td className="py-3 px-2">
+                  {/* <input type="checkbox" className="mr-2" /> */}
                   {row.propertyName}
                 </td>
-                <td className="hidden md:table-cell py-3 px-4">
+
+                {/* Owner Name */}
+                <td className="py-3 px-2 hidden md:table-cell">
                   {row.ownerName}
                 </td>
-                <td className="hidden md:table-cell py-3 px-4">
+
+                {/* Inquiry Date */}
+                <td className="py-3 px-2 hidden md:table-cell">
                   {row.inquiryDate}
                 </td>
-                <td className="hidden md:table-cell py-3 px-4">{row.price}</td>
-                <td className="hidden md:table-cell py-3 px-4">
+
+                {/* Price */}
+                <td className="py-3 px-2 hidden md:table-cell">{row.price}</td>
+
+                {/* Location */}
+                <td className="py-3 px-4 hidden md:table-cell">
                   {row.location}
                 </td>
-                <td className="py-3 px-4 flex items-center gap-2">
-                  <div
-                    className={`w-2 h-2 ${
-                      row.nextAction === "Active"
-                        ? "bg-green-500"
-                        : "bg-blue-500"
-                    } rounded-full`}
-                  ></div>
+
+                {/* Next Action */}
+                <td className="py-3 px-4">
                   <span className="text-black text-xs font-medium">
                     {row.nextAction}
                   </span>
                 </td>
+
+                {/* Status */}
+                <td className="py-3 px-4">
+                  <div className="flex items-center gap-2">
+                    <div
+                      className={`w-2 h-2 ${
+                        row.nextAction === "Active"
+                          ? "bg-green-500"
+                          : "bg-blue-500"
+                      } rounded-full`}
+                    ></div>
+                    <span className="text-black text-xs font-medium">
+                      {row.nextAction === "Active" ? "Active" : "Pending"}
+                    </span>
+                  </div>
+                </td>
+
+                {/* Actions (Edit/Delete) */}
                 <td className="py-3 px-4 flex gap-2">
                   <img
                     src={DeleteIcon}
@@ -166,6 +190,7 @@ function ActivitySummary({
             ))}
           </tbody>
         </table>
+
         <PaginationReusable
           bgColor="bg-white"
           prevIcon={prevIcon}

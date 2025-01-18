@@ -83,7 +83,8 @@ function RevenueTrendsOverview() {
           <p className="text-xs md:text-sm">2023</p>
         </div>
         <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-1/8 flex justify-center items-center">
+          <div className="w-full md:w-1/12 flex justify-center items-center">
+            {/* Reduced width on medium screens */}
             <div className="transform md:-rotate-90 whitespace-nowrap origin-bottom text-xs md:text-sm">
               Trend Views
             </div>
@@ -96,11 +97,10 @@ function RevenueTrendsOverview() {
                 <p className="ml-1 border border-gray-200 flex-grow h-[0.60px]"></p>
               </div>
             ))}
-
             {/* Vertical Lines with Curve */}
             <div className="absolute -top-7 left-[5%] w-[95%] h-[100%] flex justify-between items-end">
               {Array.from({ length: 60 }).map((_, index) => {
-                const heightIncrement = 43 + index * 0.4;
+                const heightIncrement = 48 + index * 0.3;
                 return (
                   <div
                     key={index}
@@ -112,7 +112,6 @@ function RevenueTrendsOverview() {
                 );
               })}
             </div>
-
             {/* Month Labels */}
             <div className="flex gap-2 justify-between text-[7px] md:text-sm mt-2">
               {[
@@ -134,6 +133,7 @@ function RevenueTrendsOverview() {
             </div>
           </div>
         </div>
+        <div className="text-center mt-1 text-sm font-semibold">Month</div>
       </div>
     </div>
   );

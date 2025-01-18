@@ -225,6 +225,60 @@ function ActivitySummaryAdmin({
       Location: "Medak, Hyderabad",
       Status: "Active",
     },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Medak, Hyderabad",
+      Status: "Active",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Warangal, Hyderabad",
+      Status: "featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Warangal, Hyderabad",
+      Status: "featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Warangal, Hyderabad",
+      Status: "featured",
+    },
+    {
+      propertyName: "Janapriya Ventures",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Warangal, Hyderabad",
+      Status: "Active",
+    },
+    {
+      propertyName: "Janapriya ",
+      PublishedDate: "20 Jan 2025",
+      Price: "1.0 CR",
+      Views: "180",
+      Leads: "16",
+      Location: "Warangal, Hyderabad",
+      Status: "featured",
+    },
   ],
 }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -257,7 +311,7 @@ function ActivitySummaryAdmin({
   };
 
   return (
-    <div className="px-4 md:px-5">
+    <div className="px-4 md:px-8">
       <div className="border border-gray-300 rounded-md mt-6 p-4 max-w-[98%] mx-auto">
         <div className="flex flex-col">
           <div className="flex flex-wrap items-center">
@@ -393,6 +447,7 @@ function ActivitySummaryAdmin({
         onPageChange={handlePageChange}
         currentPage={currentPage}
         totalDataLength={tableData.length} // Pass your data length here
+        itemsPerPage={itemsPerPage}
       />
     </div>
   );

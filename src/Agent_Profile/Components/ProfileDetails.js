@@ -31,7 +31,10 @@ function ProfileDetails() {
         {/* Profile Information and Action Buttons */}
         <div className="flex flex-wrap md:flex-nowrap">
           <div className="flex flex-col ml-28 md:ml-40 mt-6 md:mt-4">
-            <div className="flex items-center gap-2" onClick={handleClick}>
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={handleClick}
+            >
               <img src={LeftArrow} alt="Left Arrow" />
               <button className="text-sm">Back to</button>
             </div>

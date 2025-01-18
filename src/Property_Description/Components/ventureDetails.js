@@ -5,8 +5,8 @@ import Verified from "../Components/images/verified-added.svg";
 import Like from "../Components/images/like.svg";
 import Star from "../Components/images/YellowStar.svg";
 import Button from "../../Common/Button";
-// import Button from "../Common/Button";
-// import Box from "../Common/box";
+import LikeComponent from "../../Common/likeComponent";
+import ShareComponent from "../../Common/shareComponent";
 
 const VentureDetails = () => {
   return (
@@ -27,14 +27,14 @@ const VentureDetails = () => {
             />
           </div>
           <div className="flex md:block hidden md:flex-row ml-auto gap-3 md:flex">
-            <img src={Like} alt={Like} className="w-8" />
-            <img src={shareLocation} alt={shareLocation} />
+            <LikeComponent />
+            <ShareComponent />
           </div>
         </div>
         <div className="flex gap-5 text-black items-center mt-4">
           <img src={LocationIcon} alt={LocationIcon} />
           Hyderabad West, Pin Code 500072
-          <img src={shareLocation} alt={shareLocation} />
+          <ShareComponent />
         </div>
         <div className="flex gap-2 items-center mt-4">
           <img src={Star} alt={Star} />

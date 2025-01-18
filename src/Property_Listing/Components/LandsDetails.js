@@ -13,7 +13,8 @@ function LandsDetails() {
       <div>
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:p-6">
           {AllLandsDetails.map((item) => (
-            <div
+            <a
+              href="/PropertyDescription"
               key={item.id}
               className="relative border  border-gray-300 rounded-lg p-3 shadow-lg w-full md:max-w-[300px]" // Slightly increased container size
             >
@@ -56,7 +57,7 @@ function LandsDetails() {
                 <span className="text-gray-200">|</span>
                 <p>Rating: {item.rating}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

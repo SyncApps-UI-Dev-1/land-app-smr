@@ -11,11 +11,11 @@ function Tabs() {
   return (
     <div className="pb-12 mt-4 flex flex-col gap-4">
       {/* Tab Bar */}
-      <div className="flex flex-wrap space-x-8 justify-center md:justify-start md:space-x-6 overflow-x-auto px-2">
+      <div className="flex flex-wrap space-x-2 justify-center md:justify-start md:space-x-6 overflow-x-auto md:px-2 px-1">
         <button
           className={`${
             activeTab === "profileDetails" ? "border-b-4 border-primary" : ""
-          } pb-2 text-sm md:text-md font-medium whitespace-nowrap`}
+          } pb-2 text-xs md:text-md font-medium whitespace-nowrap`}
           onClick={() => setActiveTab("profileDetails")}
         >
           Profile Details
@@ -23,7 +23,7 @@ function Tabs() {
         <button
           className={`${
             activeTab === "postedProperties" ? "border-b-4 border-primary" : ""
-          } pb-2 text-sm md:text-md font-medium whitespace-nowrap`}
+          } pb-2 text-xs md:text-md font-medium whitespace-nowrap`}
           onClick={() => setActiveTab("postedProperties")}
         >
           Posted Properties
@@ -31,7 +31,7 @@ function Tabs() {
         <button
           className={`${
             activeTab === "history" ? "border-b-4 border-primary" : ""
-          } pb-2 text-sm md:text-md font-medium whitespace-nowrap`}
+          } pb-2 text-xs md:text-md font-medium whitespace-nowrap`}
           onClick={() => setActiveTab("history")}
         >
           History
@@ -39,7 +39,7 @@ function Tabs() {
         <button
           className={`${
             activeTab === "reviews" ? "border-b-4 border-primary" : ""
-          } pb-2 text-sm md:text-md font-medium whitespace-nowrap`}
+          } pb-2 text-xs md:text-md font-medium whitespace-nowrap`}
           onClick={() => setActiveTab("reviews")}
         >
           Reviews
@@ -47,7 +47,7 @@ function Tabs() {
         <button
           className={`${
             activeTab === "locations" ? "border-b-4 border-primary" : ""
-          } pb-2 text-sm md:text-md font-medium whitespace-nowrap`}
+          } pb-2 text-xs md:text-md font-medium whitespace-nowrap`}
           onClick={() => setActiveTab("locations")}
         >
           Locations

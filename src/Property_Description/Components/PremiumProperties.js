@@ -44,7 +44,7 @@ function PremiumProperties() {
                       src={HeartFill}
                       onClick={() => toggleLike(index)}
                       alt="Filled Heart Icon" // Corrected alt attribute for filled heart
-                      className="absolute bg-white rounded-full p-1 shadow-md top-0 right-12 cursor-pointer"
+                      className="absolute bg-white rounded-full p-1 shadow-md top-0 right-10 cursor-pointer"
                     />
                   )}
 

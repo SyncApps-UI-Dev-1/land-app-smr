@@ -13,12 +13,20 @@ const Footer = () => {
           {/* Navigation Sections */}
           <nav className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-10">
             {/* Services Section */}
-            <div>
+            <div className="flex flex-col">
               <div className="font-semibold mb-2 text-gray-500">Services</div>
-              <div className="hover:underline">Hand Holding</div>
-              <div className="hover:underline">Land Monitoring</div>
-              <div className="hover:underline">Legal Verification</div>
-              <div className="hover:underline">Get your land Surveyed</div>
+              <a href="/hand-holding" className="hover:underline">
+                Hand Holding
+              </a>
+              <a href="/land-monitoring" className="hover:underline">
+                Land Monitoring
+              </a>
+              <a href="legal-verification" className="hover:underline">
+                Legal Verification
+              </a>
+              <a href="/get-your-land-surveyed" className="hover:underline">
+                Get your land Surveyed
+              </a>
             </div>
 
             {/* Company Section */}

@@ -7,7 +7,7 @@ function ContactInfo() {
       <div>
         <div className="flex flex-wrap gap-6 px-4 mt-10 justify-center md:justify-around items-center md:w-full">
           {/* Contact Button */}
-          <Button className="flex px-3 py-2 gap-2 bg-primary rounded-md items-center">
+          <Button className="flex md:w-auto w-full px-3 py-2 gap-2 bg-primary rounded-md items-center">
             <img src={Receiver} alt="Contact Icon" />
             <span className="text-white text-sm md:text-base">
               Contact Pradeep

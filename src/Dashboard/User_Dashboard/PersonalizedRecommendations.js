@@ -2,9 +2,9 @@ import RecommendImgOne from "../../Agent_Profile/images/RecommendImgOne.svg";
 
 function PersonalizedRecommendations() {
   return (
-    <div className="mt-6">
+    <div className="mt-6 px-10">
       {/* Main Container with Reduced Width */}
-      <div className="border border-gray-300 p-4 rounded-md max-w-[950px] mx-auto">
+      <div className="border border-gray-300 p-4 rounded-md w-full mx-auto">
         <div className="font-semibold text-lg mb-2 -mt-2">
           Personalized Recommendations
         </div>
