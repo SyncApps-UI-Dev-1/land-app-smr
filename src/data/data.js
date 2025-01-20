@@ -86,7 +86,7 @@ const properties = [
     size: "3 Acres 20 Guntas",
     area: "Kandukar, Rangareddy",
     img: "/images/first.svg",
-    imgheart: "/images/heart.svg",
+    heartempty: "/images/heartempty.svg",
     imgshare: "/images/share.svg",
   },
   {
@@ -96,7 +96,7 @@ const properties = [
     size: "3 Acres 20 Guntas",
     area: "Kandukar, Rangareddy",
     img: "/images/second.svg",
-    imgheart: "/images/heart.svg",
+    heartempty: "/images/heartempty.svg",
     imgshare: "/images/share.svg",
   },
   {
@@ -106,7 +106,7 @@ const properties = [
     size: "3 Acres 20 Guntas",
     area: "Kandukar, Rangareddy",
     img: "/images/third.svg",
-    imgheart: "/images/heart.svg",
+    heartempty: "/images/heartempty.svg",
     imgshare: "/images/share.svg",
   },
   {
@@ -116,7 +116,7 @@ const properties = [
     size: "3 Acres 20 Guntas",
     area: "Kandukar, Rangareddy",
     img: "/images/fourth.svg",
-    imgheart: "/images/heart.svg",
+    heartempty: "/images/heartempty.svg",
     imgshare: "/images/share.svg",
   },
   {
@@ -126,7 +126,7 @@ const properties = [
     size: "3 Acres 20 Guntas",
     area: "Kandukar, Rangareddy",
     img: "/images/fifth.svg",
-    imgheart: "/images/heart.svg",
+    heartempty: "/images/heartempty.svg",
     imgshare: "/images/share.svg",
   },
   {
@@ -136,7 +136,7 @@ const properties = [
     size: "3 Acres 20 Guntas",
     area: "Kandukar, Rangareddy",
     img: "/images/sixth.svg",
-    imgheart: "/images/heart.svg",
+    heartempty: "/images/heartempty.svg",
     imgshare: "/images/share.svg",
   },
 ];
@@ -244,6 +244,7 @@ const AllLandsDetails = [
     price: "1.2 CR",
     size: "2200sqft",
     rating: "4.4",
+    like: "/images/heart.svg",
   },
   {
     id: 2,
@@ -255,6 +256,7 @@ const AllLandsDetails = [
     price: "1.2 CR",
     size: "2200sqft",
     rating: "4.4",
+    like: "/images/heart.svg",
   },
   {
     id: 3,
@@ -266,6 +268,7 @@ const AllLandsDetails = [
     price: "1.2 CR",
     size: "2200sqft",
     rating: "4.4",
+    like: "/images/heart.svg",
   },
   {
     id: 4,
@@ -277,6 +280,7 @@ const AllLandsDetails = [
     price: "1.2 CR",
     size: "2200sqft",
     rating: "4.4",
+    like: "/images/heart.svg",
   },
   {
     id: 5,

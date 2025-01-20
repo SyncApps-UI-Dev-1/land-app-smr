@@ -17,6 +17,7 @@ function SearchInput({
   borderBold,
   width = "w-full",
   py,
+  rounded,
 }) {
   const [inputValue, setInputValue] = useState(""); // Step 1: Manage input value with state
   const handleInputChange = (e) => {
@@ -35,7 +36,7 @@ function SearchInput({
         placeholder={placeholder}
         className={`${borderColor} ${padding} placeholder-${
           placeholderColor || "gray-500"
-        } ${width} px-8 ${py} text-sm text-gray-700 border ${borderBold} border-gray-400 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none`}
+        } ${width} px-8 ${py} text-sm text-gray-700 border ${borderBold} border-gray-400 ${rounded} shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none`}
       />
       {children}
 

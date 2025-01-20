@@ -10,7 +10,11 @@ function SearchBar() {
       {/* Search Bar Container */}
       <div className="flex flex-col md:flex-row items-center gap-2 w-full">
         {/* Search Input */}
-        <SearchInput className="flex-1 w-full md:w-auto" py="py-2" />
+        <SearchInput
+          className="flex-1 w-full md:w-auto"
+          rounded="rounded-md"
+          py="py-2"
+        />
 
         {/* Medium and above screens: Show Clear and Search buttons in one line */}
         <div className="hidden md:flex gap-2">

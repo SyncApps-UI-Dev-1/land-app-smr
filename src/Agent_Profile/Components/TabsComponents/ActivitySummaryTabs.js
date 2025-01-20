@@ -96,9 +96,6 @@ function ActivitySummaryTabs({
     setCurrentPage(pageNumber);
   };
 
-  // Multiply tableData by repeating it 3 times to make 6 entries
-  // const tableDataExpanded = [...tableData, ...tableData, ...tableData];
-
   // Paginate table data based on current page
   const paginateData = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -106,7 +103,7 @@ function ActivitySummaryTabs({
   };
 
   return (
-    <div className="px-5">
+    <div className="px-5 md:w-full w-2/3 ">
       <div className="border border-gray-300 rounded-md mt-6 p-4 max-w-[98%] mx-auto">
         <div className="flex flex-col">
           <div className="flex flex-wrap items-center">
@@ -137,7 +134,11 @@ function ActivitySummaryTabs({
             ))}
           </div>
           <div className="flex items-center ml-auto gap-3 w-full md:w-auto">
-            <SearchInput className="w-full md:w-[300px]" py="py-1.5" />
+            <SearchInput
+              className="w-full md:w-[300px]"
+              py="py-1.5"
+              rounded="rounded-md"
+            />
             <Button
               border="border border-gray-300"
               className="flex  md:gap-2 md:p-2 py-2 gap-1 p-4 rounded-md"
@@ -167,9 +168,9 @@ function ActivitySummaryTabs({
               <input type="checkbox" />
               <div>{row.InvestorName}</div>
             </div>
-            <div className="hidden md:block">{row.PropertyName}</div>
-            <div className="hidden md:block">{row.Contacted}</div>
-            <div className="hidden md:block">{row.Location}</div>
+            <div className="md:block">{row.PropertyName}</div>
+            <div className="md:block">{row.Contacted}</div>
+            <div className=" md:block">{row.Location}</div>
             <div className=" flex items-center gap-2 mt-2 md:mt-0 -mr-24 border border-gray-300 px-1 rounded-md w-[110px] md:w-[110px]">
               <div
                 className={`w-2 h-2 ${
@@ -206,6 +207,7 @@ function ActivitySummaryTabs({
         px="px-6"
         onPageChange={handlePageChange}
         currentPage={currentPage}
+        totalDataLength={tableData.length} // Pass your data length here
       />
     </div>
   );

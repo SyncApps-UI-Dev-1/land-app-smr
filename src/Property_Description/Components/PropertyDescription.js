@@ -4,13 +4,12 @@ import PathInfo from "./PathInfo";
 import VentureDetails from "./ventureDetails";
 import VentureFacilities from "./VentureFacilities";
 import Map from "./Map";
-import PremiumProperties from "./PremiumProperties";
 import Testimonial from "./Testimonial";
-// import Footer from "../Common/Footer";
-// import Navbar from "../Common/Navbar";
 import Footer from "../../Common/Footer";
 import Navbar from "../../Common/Navbar";
 import PropertyMoreDetails from "./PropertyMoreDetails";
+import PremiumProperties from "./PremiumProperties";
+import { properties } from "../../data/data";
 
 const PropertyDescription = () => {
   return (
@@ -22,7 +21,10 @@ const PropertyDescription = () => {
       <VentureFacilities />
       <Map />
       <PropertyMoreDetails />
-      <PremiumProperties />
+      <PremiumProperties
+        title="Related Premium Properties"
+        properties={properties}
+      />
       <Testimonial />
       <Footer />
     </div>

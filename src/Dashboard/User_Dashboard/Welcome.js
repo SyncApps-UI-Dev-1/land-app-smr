@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ProfilePicture from "../../Agent_Profile/images/profileSidebar.svg";
 
 function Welcome({
@@ -18,11 +19,13 @@ function Welcome({
           {progress}
         </p>
       </div>
-      <img
-        src={ProfilePicture}
-        alt="Profile"
-        className={`mt-4 sm:mt-0 sm:ml-auto w-16 h-16 sm:w-10 sm:h-12 object-contain cursor-pointer`}
-      />
+      <Link to="/profile" className="ml-auto">
+        <img
+          src={ProfilePicture}
+          alt="Profile"
+          className={`mt-4 sm:mt-0 sm:ml-auto w-16 h-16 sm:w-10 sm:h-12 object-contain cursor-pointer`}
+        />
+      </Link>
     </div>
   );
 }

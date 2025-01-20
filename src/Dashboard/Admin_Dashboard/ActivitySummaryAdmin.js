@@ -358,7 +358,11 @@ function ActivitySummaryAdmin({
             ))}
           </div>
           <div className="flex items-center ml-auto gap-2 w-full md:w-auto">
-            <SearchInput className="w-full md:w-[300px]" py="py-1.5" />
+            <SearchInput
+              className="w-full md:w-[300px]"
+              py="py-1.5"
+              rounded="rounded-md"
+            />
             <Button
               border="border border-gray-300"
               className="flex gap-2 p-2 rounded-md items-center"

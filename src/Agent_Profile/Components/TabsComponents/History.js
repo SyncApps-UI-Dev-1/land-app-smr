@@ -18,72 +18,9 @@ const communicationHistory = [
   },
 ];
 
-// Replacing SearchHistory array with JSX
 const SearchHistory = (
   <div className="-ml-24 p-4 w-[1000px]">
     <ActivitySummaryTabs />
-    {/* <ActivitySummary
-      buttons={["All history", "Contacted"]}
-      className="mt-1 text-gray-400"
-      showReport={false}
-      showPaginationReusable={false}
-      circleColor="bg-green-500"
-      isActive={true}
-      title="Search History"
-      tableHeaders={[
-        <div className="flex gap-20 justify-between">
-          <span className="text-md text-black">Investor Name</span>
-          <span className="text-md text-black">Property Name</span>
-          <span className="text-md text-black">Contacted</span>
-          <span className="text-md text-black">Location</span>
-          <span className="text-md text-black">Status</span>
-        </div>,
-      ]}
-      tableData={[
-        {
-          propertyName: "Charles T",
-          ownerName: "Janapriya Properties",
-          inquiryDate: "Dec 9, 2024, 3 PM",
-          location: "Shamshabad, Hyd",
-          nextAction: "Active",
-        },
-        {
-          propertyName: "Davis Torff",
-          ownerName: "Janapriya Properties",
-          inquiryDate: "Dec 9, 2024, 3 PM",
-          location: "Shamshabad, Hyd",
-          nextAction: "Revisit Appointment",
-        },
-        {
-          propertyName: "Zain Korsgaard",
-          ownerName: "Janapriya Properties",
-          inquiryDate: "Dec 9, 2024, 3 PM",
-          location: "Shamshabad, Hyd",
-          nextAction: "Revisit Appointment",
-        },
-        {
-          propertyName: "Martin Philips",
-          ownerName: "Janapriya Properties",
-          inquiryDate: "Dec 9, 2024, 3 PM",
-          location: "Shamshabad, Hyd",
-          nextAction: "Revisit Appointment",
-        },
-        {
-          propertyName: "Anika Dias",
-          ownerName: "Janapriya Properties",
-          inquiryDate: "Dec 9, 2024, 3 PM",
-          location: "Shamshabad, Hyd",
-          nextAction: "Revisit Appointment",
-        },
-        {
-          propertyName: "Miracle Geidt",
-          ownerName: "Janapriya Properties",
-          inquiryDate: "Dec 9, 2024, 3 PM",
-          location: "Shamshabad, Hyd",
-          nextAction: "Revisit Appointment",
-        },
-      ]}
-    /> */}
   </div>
 );
 
@@ -142,7 +79,7 @@ const History = () => {
           : displayedData.map((item, index) => (
               <div
                 key={index}
-                className="p-4 px-32 w-full border border-gray-300 rounded-md shadow-md"
+                className="p-4 w-full border border-gray-300 rounded-md shadow-md"
               >
                 <h2 className="font-bold">{item.title}</h2>
                 <p className="text-sm text-gray-500">{item.details}</p>

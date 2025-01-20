@@ -1,35 +1,28 @@
 import { useState } from "react";
-import { latestProperties, recentProperties } from "../../../data/data";
-// import { latestProperties, recentProperties } from "../TabsComponents/data";
+// import { latestProperties, recentProperties } from "../../../data/data";
 
-const PostedProperties = () => {
-  const [activeTab, setActiveTab] = useState("latest");
+const PostedProperties = ({ title, tabLabels, tabData }) => {
+  const [activeTab, setActiveTab] = useState(tabLabels[0].key);
 
-  // Rename the internal data variable to avoid conflict
   const displayedData =
-    activeTab === "latest" ? latestProperties : recentProperties;
+    tabData.find((tab) => tab.key === activeTab)?.data || [];
 
   return (
     <div>
       <div>
-        <h1 className="font-semibold">Posted Properties</h1>
+        <h1 className="font-semibold">{title}</h1>
         <div className="flex mt-6 gap-4 ml-6">
-          <button
-            className={`${
-              activeTab === "latest" ? "border-b-4 border-primary" : ""
-            } pb-2 text-md font-medium`}
-            onClick={() => setActiveTab("latest")}
-          >
-            Latest Properties
-          </button>
-          <button
-            className={`${
-              activeTab === "recent" ? "border-b-4 border-primary" : ""
-            } pb-2 text-md font-medium`}
-            onClick={() => setActiveTab("recent")}
-          >
-            Recent Properties
-          </button>
+          {tabLabels.map((tab) => (
+            <button
+              key={tab.key}
+              className={`${
+                activeTab === tab.key ? "border-b-4 border-primary" : ""
+              } pb-2 text-md font-medium`}
+              onClick={() => setActiveTab(tab.key)}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
       </div>
 

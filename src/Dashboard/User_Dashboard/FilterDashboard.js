@@ -11,16 +11,22 @@ function FilterDashboard({
   border,
 }) {
   return (
-    <div className="flex md:flex-row flex-col items-center gap-4 sm:gap-2 mt-6">
+    <div className="flex md:flex-row flex-col items-center gap-4 sm:gap-2 mt-6 w-full">
       {/* Search Input */}
-      <SearchInput
-        placeholder="Default"
-        placeholderColor={placeholderColor} // Passing placeholderColor to SearchInput
-        showIcon={false}
-        py="py-2"
-        width="w-full"
-        className="placeholder-black w-full" // Adjust width for responsiveness
-      />
+      <div className="flex flex-1 w-full">
+        <button className="border border-gray-300 rounded-l-md p-1 px-3 text-gray-400">
+          Default
+        </button>
+        <SearchInput
+          placeholder=""
+          placeholderColor={placeholderColor} // Passing placeholderColor to SearchInput
+          showIcon={false}
+          py="py-2"
+          width="w-full"
+          rounded="rounded-r-md"
+          className="placeholder-black rounded-r-md w-full outline-none" // Adjust width for responsiveness
+        />
+      </div>
       <CalendarDropdown />
       <Button
         border="border border-gray-300"
