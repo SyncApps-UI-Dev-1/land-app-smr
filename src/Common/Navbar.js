@@ -2,19 +2,19 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Avatar from "../Property_Description/Components/images/AvatarFive.svg";
 
-// Default Logo (you can also pass a custom logo)
 function Navbar({
-  logoText = "Land App", // Default logo text
-  avatarSrc = "Avatar", // Default avatar (can be passed from parent)
-  avatarAlt = "Avatar", // Default alt text for avatar
-  profileLink = "/Profile", // Default profile link
+  logoText = "Land App",
+  avatarSrc = "Avatar",
+  avatarAlt = "Avatar",
+  profileLink = "/Profile",
   menuItems = [
     { label: "All Lands", to: "/AllLands" },
     { label: "Developers", to: "#" },
     { label: "Lakes", to: "#" },
     { label: "Premium", to: "#" },
     { label: "Services", to: "#" },
-  ], // Default menu items
+  ],
+  children,
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -47,6 +47,8 @@ function Navbar({
 
       {/* Right Section - Notifications and Avatar (Hidden in Mobile View) */}
       <div className="flex items-center gap-2">
+        {children && <div className="addtional-content">{children}</div>}
+
         <Link to={profileLink}>
           <img
             src={Avatar}
@@ -54,6 +56,7 @@ function Navbar({
             className="rounded-full w-8 h-8 ml-2 border border-gray-300 cursor-pointer"
           />
         </Link>
+
         {/* Hamburger Menu - Visible on Small Screens */}
         <button
           className="md:hidden text-gray-700 focus:outline-none ml-6"
