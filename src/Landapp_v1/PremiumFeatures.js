@@ -2,6 +2,7 @@ import VerifiedImg from "./images/VerifiedHome.svg";
 import RightHome from "./images/RightHome.svg";
 import Approved from "././images/aproved.svg";
 import AppIntroImg from "./images/AppIntroImg.svg";
+import Features from "./Features";
 function PremiumFeatures() {
   const PremiumFeatures = [
     "Listings Access",
@@ -12,7 +13,7 @@ function PremiumFeatures() {
   return (
     <div className="mx-20 flex mt-20">
       <div className="w-1/2 ">
-        <div className="relative ">
+        <div className="relative">
           <img src={VerifiedImg} alt={VerifiedImg} className="w-8 h-8" />
           <img
             src={RightHome}
@@ -27,30 +28,19 @@ function PremiumFeatures() {
           Once you subscribe, we will schedule a call with you to get you
           started.
         </div>
-        <div className="flex flex-col mt-6 ml-4 gap-4">
+        {/* <div className="flex flex-col mt-6 ml-4 gap-4">
           {PremiumFeatures.map((premiumfeature, index) => (
             <div key={index} className="flex gap-2 items-center">
               <img src={Approved} alt={Approved} />
               <div className="text-gray-800">{premiumfeature}</div>
             </div>
           ))}
-          {/* <div className="flex gap-2 items-center">
-            <img src={Approved} alt={Approved} className="w-5 h-5" />
-            <div className="text-gray-800">Listings Access</div>
-          </div>
-          <div className="flex gap-2 items-center">
-            <img src={Approved} alt={Approved} className="w-5 h-5" />
-            <div className="text-gray-800">Access to Satellite Maps</div>
-          </div>
-          <div className="flex gap-2 items-center">
-            <img src={Approved} alt={Approved} className="w-5 h-5" />
-            <div className="text-gray-800">Regional Ring Road Map</div>
-          </div>
-          <div className="flex gap-2 items-center">
-            <img src={Approved} alt={Approved} className="w-5 h-5" />
-            <div className="text-gray-800">Group-Buying Options</div>
-          </div> */}
-        </div>
+        </div> */}
+        <Features
+          features={PremiumFeatures}
+          iconAlt={Approved}
+          iconSrc={Approved}
+        />
         <button className="bg-black p-3 text-white mt-10 rounded-lg">
           Subscribe Now
         </button>
